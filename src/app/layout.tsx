@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { LenisProvider } from '@/components/providers/lenis-provider'
+import { seo, brand } from '@/lib/content'
 
 const display = Cormorant_Garamond({
   subsets: ['latin'],
@@ -26,16 +27,21 @@ const script = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Luna Ferris — Hochzeits- & Portraitfotografie',
-  description:
-    'Editorial-Hochzeits- und Portraitfotografie mit Stille, Stil und Haltung. Berlin — weltweit.',
-  metadataBase: new URL('https://lunaferris.de'),
+  title: seo.title,
+  description: seo.description,
+  keywords: [...seo.keywords],
+  metadataBase: new URL('https://luna-ferris.vercel.app'),
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Luna Ferris — Hochzeits- & Portraitfotografie',
-    description: 'Momente, die bleiben. Fotografie mit Haltung.',
+    title: seo.title,
+    description: seo.description,
     type: 'website',
     locale: 'de_DE',
+    siteName: brand.studio,
   },
+  robots: { index: true, follow: true },
+  authors: [{ name: brand.studio }],
+  creator: brand.studio,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,6 +49,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="de" className={`${display.variable} ${body.variable} ${script.variable}`}>
       <body className="min-h-screen bg-bg text-fg antialiased">
         <LenisProvider>{children}</LenisProvider>
+        {/* Local-Business Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': 'https://luna-ferris.vercel.app',
+              name: brand.studio,
+              image: 'https://luna-ferris.vercel.app/og.jpg',
+              description: seo.description,
+              priceRange: '€€',
+              address: {
+                '@type': 'PostalAddress',
+                addressRegion: 'NRW',
+                addressCountry: 'DE',
+                addressLocality: 'Kerpen',
+              },
+              areaServed: ['Köln', 'Euskirchen', 'Kerpen', 'Erftstadt', 'Rhein-Erft-Kreis'],
+              telephone: brand.phone,
+              email: brand.email,
+              url: 'https://luna-ferris.vercel.app',
+            }),
+          }}
+        />
       </body>
     </html>
   )

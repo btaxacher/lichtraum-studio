@@ -135,6 +135,12 @@ html, body {
   z-index: 10;
 }
 
+/* Global keyframes (inline style consumers) */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

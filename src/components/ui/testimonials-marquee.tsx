@@ -45,10 +45,11 @@ function MarqueeRow({
     <div className="relative w-full mx-auto overflow-hidden">
       <div className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-r from-bg to-transparent" />
       <div
-        className={`flex min-w-[200%] ${reverse ? 'py-5' : 'py-5'}`}
+        className="flex flex-nowrap py-5 w-max"
         style={{
           animation: `marquee ${speed}s linear infinite`,
           animationDirection: reverse ? 'reverse' : 'normal',
+          willChange: 'transform',
         }}
       >
         {doubled.map((c, i) => (

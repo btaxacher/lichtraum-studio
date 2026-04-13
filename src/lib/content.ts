@@ -5,11 +5,31 @@
 
 export const brand = {
   name: 'LUNA FERRIS',
+  studio: 'Luna Ferris Studio',
   tagline: 'Hochzeits- & Portraitfotografie',
   email: 'kontakt@lunaferris.de',
-  phone: '+49 30 123 456 78',
-  location: 'Berlin — weltweit',
+  phone: '+49 2251 123 456',
+  location: 'Köln · Euskirchen · Kerpen · Erftstadt',
+  region: 'Raum Köln & Rhein-Erft-Kreis',
   instagram: '@lunaferris.studio',
+} as const
+
+export const seo = {
+  title: 'Fotograf Köln, Euskirchen, Kerpen & Erftstadt | Luna Ferris Studio',
+  description:
+    'Fotografie-Studio im Raum Köln, Euskirchen, Kerpen & Erftstadt. Hochzeitsfotografie, Portraits, Paar- und Familienshootings. Jetzt Termin anfragen — Antwort innerhalb von 24 Stunden.',
+  keywords: [
+    'Fotograf Köln',
+    'Fotograf Euskirchen',
+    'Fotograf Kerpen',
+    'Fotograf Erftstadt',
+    'Hochzeitsfotograf Köln',
+    'Hochzeitsfotograf NRW',
+    'Portraitfotograf Rhein-Erft',
+    'Familienfotograf Köln',
+    'Paarshooting Euskirchen',
+    'Fotostudio Kerpen',
+  ],
 } as const
 
 // Image strategy:
@@ -59,12 +79,34 @@ export const manifest = {
 const U = (id: string, w = 1400) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`
 
+// Fünf konkrete Leistungen — fokussiert auf SEO & Anfragen im Raum Köln/Rhein-Erft.
+// Jede Leistung = eigene Zielgruppe, eigener Suchbegriff, eigener Conversion-Pfad.
 export const services = [
-  { title: 'Hochzeiten', description: 'Ganztagsbegleitung, Reportage & Editorial', image: IMG('/images/services/weddings.jpg', U('photo-1519741497674-611481863552')) },
-  { title: 'Portraits', description: 'Editorial & Natural Light Sessions', image: IMG('/images/services/portraits.jpg', U('photo-1524504388940-b1c1722653e1')) },
-  { title: 'Paarshootings', description: 'Engagement, Anniversary, „Just Us"', image: IMG('/images/services/couples.jpg', U('photo-1529634597503-139d3726fed5')) },
-  { title: 'Editorial', description: 'Campaigns, Lookbooks, Fashion', image: IMG('/images/services/editorial.jpg', U('photo-1515934751635-c81c6bc9a2d8')) },
-  { title: 'Destination', description: 'Italien, Südfrankreich, Marokko', image: IMG('/images/services/destination.jpg', U('photo-1464207687429-7505649dae38')) },
+  {
+    title: 'Hochzeitsfotografie',
+    description: 'Ganztagsbegleitung als Reportage — Köln, Euskirchen & Umgebung',
+    image: IMG('/images/services/weddings.jpg', U('photo-1519741497674-611481863552')),
+  },
+  {
+    title: 'Paarshootings',
+    description: 'Engagement, Jahrestag, After-Wedding — auf Location oder im Studio',
+    image: IMG('/images/services/couples.jpg', U('photo-1529634597503-139d3726fed5')),
+  },
+  {
+    title: 'Familien & Kinder',
+    description: 'Natürliche Familienshootings zuhause oder draußen im Rhein-Erft-Kreis',
+    image: IMG('/images/services/family.jpg', U('photo-1478131143081-80f7f84ca84d')),
+  },
+  {
+    title: 'Portraits & Business',
+    description: 'Bewerbungsfotos, LinkedIn-Headshots, Branding-Portraits',
+    image: IMG('/images/services/portraits.jpg', U('photo-1580489944761-15a19d654956')),
+  },
+  {
+    title: 'Babybauch & Newborn',
+    description: 'Schwangerschafts- und Babyshootings im Studio Kerpen',
+    image: IMG('/images/services/maternity.jpg', U('photo-1519689680058-324335c77eba')),
+  },
 ] as const
 
 export const parallaxImages = [
@@ -90,15 +132,24 @@ export const masonryCards = [
   { profileImage: AVATAR(8), name: 'Anna M.', feedback: 'Fashion Editorial', mainImage: IMG('/images/masonry/m-08.jpg', U('photo-1515934751635-c81c6bc9a2d8', 900)) },
 ] as const
 
+// Verified Unsplash IDs — all wedding/portrait/couple/family, no architecture, no dead links
 const SHUFFLE_REMOTE = [
-  'photo-1469371670807-013ccf25f16a', 'photo-1523438885200-e635ba2c371e',
-  'photo-1519741497674-611481863552', 'photo-1606216794074-735e91aa2c92',
-  'photo-1537633552985-df8429e8048b', 'photo-1519225421980-715cb0215aed',
-  'photo-1529634597503-139d3726fed5', 'photo-1525258946800-98cfd641d0de',
-  'photo-1515934751635-c81c6bc9a2d8', 'photo-1524504388940-b1c1722653e1',
-  'photo-1502823403499-6ccfcf4fb453', 'photo-1464207687429-7505649dae38',
-  'photo-1551038247-3d9af20df552', 'photo-1606800052052-a08af7148866',
-  'photo-1542996966-06cbafe4dc7c', 'photo-1505935428862-770b6f24f629',
+  'photo-1519741497674-611481863552', // bride
+  'photo-1606216794074-735e91aa2c92', // couple
+  'photo-1537633552985-df8429e8048b', // wedding
+  'photo-1519225421980-715cb0215aed', // wedding detail
+  'photo-1529634597503-139d3726fed5', // couple field
+  'photo-1525258946800-98cfd641d0de', // portrait bw
+  'photo-1515934751635-c81c6bc9a2d8', // editorial portrait
+  'photo-1524504388940-b1c1722653e1', // portrait woman
+  'photo-1502823403499-6ccfcf4fb453', // rings
+  'photo-1464207687429-7505649dae38', // dress
+  'photo-1551038247-3d9af20df552', // bride flowers
+  'photo-1606800052052-a08af7148866', // reception
+  'photo-1583939003579-730e3918a45a', // bride portrait
+  'photo-1509927083803-4bd519298ac4', // wedding couple
+  'photo-1583939411023-14783179e581', // bride back
+  'photo-1591604466107-ec97de577aff', // couple soft
 ]
 
 export const shuffleImages = SHUFFLE_REMOTE.map((id, i) => ({
