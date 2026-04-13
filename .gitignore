@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.vercel/
+.env*.local
+*.log
+.DS_Store
+
+# Generated images (large, regenerate via `npm run generate-images`)
+public/images/hero/
+public/images/services/
+public/images/gallery/
+public/images/masonry/
+public/images/shuffle/
+public/images/trail/
+public/images/testimonial/
+public/images/avatars/
