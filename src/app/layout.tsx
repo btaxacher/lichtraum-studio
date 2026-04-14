@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { LenisProvider } from '@/components/providers/lenis-provider'
+import { Nav } from '@/components/sections/nav'
+import { Footer } from '@/components/sections/footer'
 import { seo, brand } from '@/lib/content'
 
 const display = Cormorant_Garamond({
@@ -48,7 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className={`${display.variable} ${body.variable} ${script.variable}`}>
       <body className="min-h-screen bg-bg text-fg antialiased">
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </LenisProvider>
         {/* Local-Business Structured Data for SEO */}
         <script
           type="application/ld+json"

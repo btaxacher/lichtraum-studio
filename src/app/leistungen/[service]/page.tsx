@@ -1,0 +1,67 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { services, cities } from '@/lib/locations'
+import { SubPageHero } from '@/components/sections/sub-page-hero'
+import { ProseSection } from '@/components/sections/prose-section'
+import { InternalLinks } from '@/components/sections/internal-links'
+import { CTA } from '@/components/sections/cta'
+
+export function generateStaticParams() {
+  return services.map((s) => ({ service: s.slug }))
+}
+
+type Props = { params: Promise<{ service: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { service } = await params
+  const entry = services.find((s) => s.slug === service)
+  if (!entry) return {}
+  const title = `${entry.h1} | Lichtraum Studio`
+  const description = `${entry.intro} Preise ${entry.startingPrice}. Termin online anfragen.`
+  return {
+    title,
+    description,
+    alternates: { canonical: `/leistungen/${entry.slug}` },
+    openGraph: { title, description, type: 'website', locale: 'de_DE' },
+  }
+}
+
+export default async function ServicePage({ params }: Props) {
+  const { service } = await params
+  const entry = services.find((s) => s.slug === service)
+  if (!entry) notFound()
+
+  const cityLinks = cities.slice(0, 6).map((c) => ({
+    href: `/fotograf/${c.slug}`,
+    label: `${entry.name} ${c.name}`,
+    hint: `${c.distanceKm} km`,
+  }))
+
+  return (
+    <main className="relative min-h-screen">
+      <SubPageHero
+        eyebrow={`Leistung · ${entry.startingPrice}`}
+        h1={entry.h1}
+        subtitle={entry.intro}
+      />
+
+      <ProseSection eyebrow="Ablauf" title="So arbeiten wir">
+        <p>
+          Jedes Shooting beginnt mit einem Vorgespräch — per Telefon oder Video. Dabei klären wir Anlass, Stimmung,
+          Location, Kleidung und Dauer. Auf Wunsch geben wir Orientierungshilfe zu Outfit oder Vorbereitung.
+        </p>
+        <p>
+          Vor Ort arbeiten wir ruhig, beobachtend, mit Zeit. Retusche und Auslieferung erfolgen innerhalb weniger Tage
+          über ein geschütztes Online-Portal.
+        </p>
+        <p className="text-fg-muted text-base">
+          Platzhalter — Phase 3/7 ersetzt diesen Text durch ausführlichen Service-Content inkl. Preistabellen und FAQ.
+        </p>
+      </ProseSection>
+
+      <InternalLinks title={`${entry.name} auch in diesen Städten`} links={cityLinks} />
+
+      <CTA />
+    </main>
+  )
+}
