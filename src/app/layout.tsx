@@ -40,6 +40,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     siteName: brand.studio,
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: brand.studio }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: seo.title,
+    description: seo.description,
+    images: ['/og.jpg'],
   },
   robots: { index: true, follow: true },
   authors: [{ name: brand.studio }],
@@ -61,7 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
+              '@type': ['LocalBusiness', 'ProfessionalService'],
+              additionalType: 'https://schema.org/Photograph',
               '@id': 'https://lichtraum-studio.vercel.app',
               name: brand.studio,
               image: 'https://lichtraum-studio.vercel.app/og.jpg',

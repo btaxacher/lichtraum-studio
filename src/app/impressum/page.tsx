@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { brand } from '@/lib/content'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Impressum | Lichtraum Fotostudio',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Impressum' }]} />
       <SubPageHero eyebrow="Legal" h1="Impressum" />
       <ProseSection eyebrow="Angaben gemäß § 5 TMG" title="Lichtraum Fotostudio">
         <p>[Platzhalter — in Phase 9 mit ladungsfähiger Adresse ergänzen]</p>

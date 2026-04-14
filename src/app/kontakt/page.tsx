@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { brand } from '@/lib/content'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Kontakt | Lichtraum Fotostudio Euskirchen',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Kontakt' }]} />
       <SubPageHero eyebrow="Kontakt" h1="Termin anfragen" subtitle="Schreiben Sie uns — Antwort innerhalb von 24 Stunden." />
       <ProseSection eyebrow="Erreichbarkeit" title="So erreichen Sie uns">
         <p>

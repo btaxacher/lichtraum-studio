@@ -5,6 +5,8 @@ import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { InternalLinks } from '@/components/sections/internal-links'
 import { CTA } from '@/components/sections/cta'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
+import { brand } from '@/lib/content'
 
 export function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }))
@@ -36,8 +38,19 @@ export default async function CityPage({ params }: Props) {
     .filter((c): c is NonNullable<typeof c> => Boolean(c))
     .map((c) => ({ href: `/fotograf/${c.slug}`, label: `Fotograf ${c.name}`, hint: `${c.distanceKm} km von Euskirchen` }))
 
+  const cityServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `${brand.studio} — ${entry.name}`,
+    description: entry.tagline,
+    areaServed: entry.name,
+    provider: { '@type': 'Organization', name: brand.studio, url: 'https://lichtraum-studio.vercel.app' },
+    address: { '@type': 'PostalAddress', addressLocality: entry.name, postalCode: entry.postalCode, addressCountry: 'DE' },
+  }
+
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Standorte' }, { label: entry.name }]} />
       <SubPageHero
         eyebrow={`Standort · ${entry.distanceKm} km von Euskirchen`}
         h1={`Fotograf ${entry.name}`}
@@ -67,6 +80,7 @@ export default async function CityPage({ params }: Props) {
       <InternalLinks title={`Auch verfügbar in Nachbarstädten von ${entry.name}`} links={neighborLinks} />
 
       <CTA />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceSchema) }} />
     </main>
   )
 }

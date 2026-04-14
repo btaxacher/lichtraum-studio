@@ -5,6 +5,8 @@ import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { InternalLinks } from '@/components/sections/internal-links'
 import { CTA } from '@/components/sections/cta'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
+import { brand } from '@/lib/content'
 
 export function generateStaticParams() {
   return services.map((s) => ({ service: s.slug }))
@@ -37,8 +39,19 @@ export default async function ServicePage({ params }: Props) {
     hint: `${c.distanceKm} km`,
   }))
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: entry.h1,
+    description: entry.intro,
+    provider: { '@type': 'LocalBusiness', name: brand.studio, url: 'https://lichtraum-studio.vercel.app' },
+    areaServed: ['Euskirchen', 'Köln', 'Bonn', 'Rhein-Erft'],
+    offers: { '@type': 'Offer', price: entry.startingPrice.replace(/[^0-9]/g, ''), priceCurrency: 'EUR' },
+  }
+
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Leistungen' }, { label: entry.name }]} />
       <SubPageHero
         eyebrow={`Leistung · ${entry.startingPrice}`}
         h1={entry.h1}
@@ -62,6 +75,7 @@ export default async function ServicePage({ params }: Props) {
       <InternalLinks title={`${entry.name} auch in diesen Städten`} links={cityLinks} />
 
       <CTA />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
     </main>
   )
 }

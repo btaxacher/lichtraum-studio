@@ -12,7 +12,7 @@ type Props = {
 
 export function SubPageHero({ eyebrow, h1, subtitle, ctaHref = '/kontakt', ctaLabel = 'Termin anfragen' }: Props) {
   return (
-    <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 border-b border-border-soft">
+    <section className="relative pt-10 md:pt-14 pb-20 md:pb-28 border-b border-border-soft">
       <div className="mx-auto max-w-[1100px] px-5 md:px-8 lg:px-12">
         {eyebrow && (
           <div className="flex items-center gap-2 mb-6 text-accent">

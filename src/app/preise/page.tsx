@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { services } from '@/lib/locations'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Preise | Lichtraum Fotostudio Euskirchen',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function PricesPage() {
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Preise' }]} />
       <SubPageHero eyebrow="Preise" h1="Transparente Preise" subtitle="Festpreise, keine Überraschungen. Retusche und digitale Auslieferung im Paket enthalten." />
       <ProseSection eyebrow="Übersicht" title="Startpreise">
         <ul className="space-y-3 list-disc pl-6 marker:text-accent">

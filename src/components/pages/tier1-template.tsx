@@ -5,6 +5,7 @@ import { tier1Content } from '@/content/tier1-content'
 import { SubPageHero } from '@/components/sections/sub-page-hero'
 import { ProseSection } from '@/components/sections/prose-section'
 import { CTA } from '@/components/sections/cta'
+import { Breadcrumbs } from '@/components/sections/breadcrumbs'
 import { brand } from '@/lib/content'
 
 export function tier1Metadata(slug: string): Metadata {
@@ -48,8 +49,11 @@ export function Tier1Page({ slug }: { slug: string }) {
     description: entry.description,
   }
 
+  const shortLabel = entry.h1.split('—')[0].trim()
+
   return (
     <main className="relative min-h-screen">
+      <Breadcrumbs items={[{ label: 'Leistungen' }, { label: shortLabel }]} />
       <SubPageHero
         eyebrow={content?.eyebrow ?? `Ziel-Volumen: ${entry.targetVolume}/Monat`}
         h1={entry.h1}
