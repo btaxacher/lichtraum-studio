@@ -134,8 +134,8 @@ export const masonryCards = [
   { profileImage: AVATAR(8), name: 'Anna M.', feedback: 'Fashion Editorial', mainImage: IMG('/images/masonry/m-08.jpg', U('photo-1515934751635-c81c6bc9a2d8', 900)) },
 ] as const
 
-// Proven-good Unsplash IDs (all reused from hero/parallax/trail sets, already
-// rendered live). No architecture, no confetti, no dead links.
+// 12 unique, proven-good Unsplash IDs (all reused from hero/parallax sets
+// that already render live). No architecture, no duplicates, no dead links.
 const SHUFFLE_REMOTE = [
   'photo-1519741497674-611481863552', // bride
   'photo-1606216794074-735e91aa2c92', // couple
@@ -149,10 +149,6 @@ const SHUFFLE_REMOTE = [
   'photo-1464207687429-7505649dae38', // dress
   'photo-1551038247-3d9af20df552', // bride flowers
   'photo-1509927083803-4bd519298ac4', // wedding couple
-  'photo-1519741497674-611481863552', // bride (repeat for variety)
-  'photo-1529634597503-139d3726fed5', // couple
-  'photo-1515934751635-c81c6bc9a2d8', // editorial bw
-  'photo-1525258946800-98cfd641d0de', // portrait bw
 ]
 
 export const shuffleImages = SHUFFLE_REMOTE.map((id, i) => ({

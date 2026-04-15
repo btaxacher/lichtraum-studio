@@ -33,9 +33,10 @@ export function Hero() {
             }`}
           >
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover"
               style={{
                 backgroundImage: `url(${slide.img})`,
+                backgroundPosition: 'center 28%',
                 transform: i === current ? 'scale(1)' : 'scale(1.06)',
                 transition: 'transform 8s ease-out',
               }}

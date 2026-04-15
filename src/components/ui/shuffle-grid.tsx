@@ -40,7 +40,7 @@ export function ShuffleGrid({ images, intervalMs = 3000 }: ShuffleGridProps) {
   }, [images, intervalMs])
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] md:h-[560px] gap-1.5 w-full">
+    <div className="grid grid-cols-4 grid-rows-3 h-[420px] md:h-[560px] gap-1.5 w-full">
       {squares.map((sq) => (
         <motion.div
           key={sq.id}
