@@ -6,28 +6,28 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#0a0908',
-          elevated: '#121110',
-          subtle: '#1a1816',
-          surface: '#201e1b',
+          DEFAULT: '#14110f',
+          elevated: '#1c1915',
+          subtle: '#221e19',
+          surface: '#2a2620',
         },
         fg: {
-          DEFAULT: '#f5f1ea',
-          muted: '#a8a29a',
-          subtle: '#6e6a64',
+          DEFAULT: '#f8f3ec',
+          muted: '#bdb6ab',
+          subtle: '#837d73',
         },
         accent: {
-          DEFAULT: '#c9a96e',
-          soft: '#8a7249',
+          DEFAULT: '#d4b37a',
+          soft: '#9a7f50',
         },
         border: {
-          DEFAULT: '#2a2724',
-          soft: '#1d1b18',
+          DEFAULT: '#342f29',
+          soft: '#24201b',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Cormorant Garamond', 'serif'],
-        body: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Fraunces', 'Cormorant Garamond', 'serif'],
+        body: ['var(--font-body)', 'DM Sans', 'Inter', 'system-ui', 'sans-serif'],
         script: ['var(--font-script)', '"Playfair Display"', 'serif'],
       },
       fontSize: {
@@ -52,8 +52,8 @@ const config: Config = {
         widest: '0.2em',
       },
       boxShadow: {
-        glow: '0 0 40px rgba(201, 169, 110, 0.15)',
-        editorial: '0 24px 60px rgba(0, 0, 0, 0.6)',
+        glow: '0 0 40px rgba(212, 179, 122, 0.18)',
+        editorial: '0 24px 60px rgba(0, 0, 0, 0.55)',
       },
       transitionTimingFunction: {
         'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',

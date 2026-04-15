@@ -43,7 +43,7 @@ function MarqueeRow({
   const doubled = React.useMemo(() => [...data, ...data], [data])
   return (
     <div className="relative w-full mx-auto overflow-hidden">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-r from-bg to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-r from-bg-subtle via-bg-subtle/70 to-transparent" />
       <div
         className="flex flex-nowrap py-5 w-max"
         style={{
@@ -56,7 +56,7 @@ function MarqueeRow({
           <Card key={i} card={c} />
         ))}
       </div>
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-l from-bg to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-24 md:w-40 z-10 bg-gradient-to-l from-bg-subtle via-bg-subtle/70 to-transparent" />
     </div>
   )
 }

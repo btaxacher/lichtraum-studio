@@ -1,10 +1,25 @@
 import Link from 'next/link'
-import { brand } from '@/lib/content'
+import { brand, footerCover } from '@/lib/content'
 import { services, cities, tier1Pages } from '@/lib/locations'
 
 export function Footer() {
   return (
-    <footer className="border-t border-border-soft bg-bg-elevated pt-16 pb-10">
+    <footer className="bg-bg-elevated">
+      {/* Editorial image bridge into the footer */}
+      <div
+        aria-hidden
+        className="relative w-full h-[220px] md:h-[300px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${footerCover})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/40 to-bg-elevated" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="editorial-display text-3xl md:text-5xl italic text-fg/95 tracking-tight">
+            {brand.studio}
+          </span>
+        </div>
+      </div>
+
+      <div className="border-t border-border-soft pt-16 pb-10">
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
           {/* Brand */}
@@ -84,6 +99,7 @@ export function Footer() {
             Instagram: <a href={`https://instagram.com/${brand.instagram.replace('@','')}`} className="hover:text-accent transition-colors">{brand.instagram}</a>
           </p>
         </div>
+      </div>
       </div>
     </footer>
   )

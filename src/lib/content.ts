@@ -102,12 +102,12 @@ export const services = [
   {
     title: 'Portraits & Business',
     description: 'Bewerbungsfotos, LinkedIn-Headshots, Branding-Portraits',
-    image: IMG('/images/services/portraits.jpg', U('photo-1580489944761-15a19d654956')),
+    image: IMG('/images/services/portraits.jpg', U('photo-1494790108755-2616b612b786')),
   },
   {
     title: 'Babybauch & Newborn',
     description: 'Schwangerschafts- und Babyshootings im Studio Euskirchen',
-    image: IMG('/images/services/maternity.jpg', U('photo-1519689680058-324335c77eba')),
+    image: IMG('/images/services/maternity.jpg', U('photo-1555252333-9f8e92e65df9')),
   },
 ] as const
 
@@ -148,10 +148,10 @@ const SHUFFLE_REMOTE = [
   'photo-1464207687429-7505649dae38', // dress
   'photo-1551038247-3d9af20df552', // bride flowers
   'photo-1606800052052-a08af7148866', // reception
-  'photo-1583939003579-730e3918a45a', // bride portrait
+  'photo-1492684223066-81342ee5ff30', // wedding ceremony
   'photo-1509927083803-4bd519298ac4', // wedding couple
-  'photo-1583939411023-14783179e581', // bride back
-  'photo-1591604466107-ec97de577aff', // couple soft
+  'photo-1494790108755-2616b612b786', // portrait woman
+  'photo-1517841905240-472988babdf9', // portrait man
 ]
 
 export const shuffleImages = SHUFFLE_REMOTE.map((id, i) => ({
@@ -159,11 +159,27 @@ export const shuffleImages = SHUFFLE_REMOTE.map((id, i) => ({
   src: IMG(`/images/shuffle/s-${String(i + 1).padStart(2, '0')}.jpg`, U(id, 800)),
 }))
 
-export const trailImages = [
-  'photo-1519741497674-611481863552', 'photo-1537633552985-df8429e8048b',
-  'photo-1529634597503-139d3726fed5', 'photo-1515934751635-c81c6bc9a2d8',
-  'photo-1606216794074-735e91aa2c92', 'photo-1524504388940-b1c1722653e1',
-].map((id, i) => IMG(`/images/trail/t-0${i + 1}.jpg`, U(id, 400)))
+// Slideshow images used as background behind the CTA/contact section.
+export const ctaSlides = [
+  IMG('/images/cta/cta-01.jpg', U('photo-1519741497674-611481863552', 2000)),
+  IMG('/images/cta/cta-02.jpg', U('photo-1537633552985-df8429e8048b', 2000)),
+  IMG('/images/cta/cta-03.jpg', U('photo-1529634597503-139d3726fed5', 2000)),
+  IMG('/images/cta/cta-04.jpg', U('photo-1515934751635-c81c6bc9a2d8', 2000)),
+]
+
+// Slim editorial strip shown above the footer.
+export const footerCover = IMG(
+  '/images/footer/footer-cover.jpg',
+  U('photo-1606216794074-735e91aa2c92', 2400),
+)
+
+export const ctaCopy = {
+  eyebrow: 'Erzähl uns deine Geschichte.',
+  heading: ['Der beste Moment,', 'um den schönsten festzuhalten.'],
+  body:
+    'Egal ob Hochzeit, Portrait oder ein besonderer Anlass — erzähl uns von deiner Idee, deinem Ort und deinem Wunsch-Termin. Wir melden uns innerhalb von 24 Stunden persönlich bei dir zurück und finden gemeinsam heraus, wie dein Shooting aussehen soll.',
+  cta: 'Anfrage senden →',
+} as const
 
 export const testimonials = [
   { image: AVATAR(1), name: 'Emilia & Jonas', handle: 'Hochzeit Toskana', body: 'Das Team von Lichtraum hat Momente eingefangen, die wir nicht einmal selbst gesehen haben — das echte Lachen, das Zittern vor dem Ja. Jedes Bild fühlt sich an wie eine Erinnerung, bevor sie entsteht.' },

@@ -51,8 +51,8 @@ function MoonPhase({ frac, size }: { frac: number; size: number }) {
           <circle cx={r - offset} cy={r} r={r} fill="black" />
         </mask>
       </defs>
-      <circle cx={r} cy={r} r={r - 0.5} fill="none" stroke="#c9a96e" strokeWidth={0.8} opacity={0.6} />
-      <circle cx={r} cy={r} r={r - 1} fill="#f5f1ea" opacity={0.95} mask={`url(#m-${frac}-${size})`} />
+      <circle cx={r} cy={r} r={r - 0.5} fill="none" stroke="#d4b37a" strokeWidth={0.8} opacity={0.6} />
+      <circle cx={r} cy={r} r={r - 1} fill="#f8f3ec" opacity={0.95} mask={`url(#m-${frac}-${size})`} />
     </svg>
   )
 }
