@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
-import { EditorialHeading } from '@/components/ui/section'
 import { brand, ctaCopy, ctaSlides } from '@/lib/content'
 
 export function CTA() {
@@ -15,66 +14,65 @@ export function CTA() {
   }, [advance])
 
   return (
-    <section
-      id="contact"
-      className="relative w-full overflow-hidden py-32 md:py-48 text-center"
-    >
-      {/* Background slideshow */}
-      <div className="absolute inset-0 -z-10">
-        {ctaSlides.map((src, i) => (
-          <div
-            key={i}
-            aria-hidden={i !== current}
-            className={`absolute inset-0 transition-opacity duration-[1600ms] ease-editorial ${
-              i === current ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${src})`,
-                transform: i === current ? 'scale(1.02)' : 'scale(1.1)',
-                transition: 'transform 10s ease-out',
-              }}
-            />
-          </div>
-        ))}
-        {/* Readability overlay — keeps copy legible across warm/cool photos */}
-        <div className="absolute inset-0 bg-bg/80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/90 via-bg/70 to-bg" />
-      </div>
-
-      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
+    <section id="contact" className="relative w-full bg-bg py-20 md:py-28">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="max-w-3xl mx-auto"
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid md:grid-cols-2 gap-10 md:gap-16 items-center rounded-2xl overflow-hidden bg-bg-elevated border border-border-soft"
         >
-          <p className="script-heading text-3xl md:text-4xl mb-6">{ctaCopy.eyebrow}</p>
-          <EditorialHeading size="xl" align="center" className="mb-8">
-            {ctaCopy.heading[0]}
-            <br />
-            {ctaCopy.heading[1]}
-          </EditorialHeading>
-          <p className="text-base md:text-lg text-fg-muted max-w-2xl mx-auto mb-12 leading-relaxed">
-            {ctaCopy.body}
-          </p>
-          <a
-            href={`mailto:${brand.email}?subject=Anfrage%20Shooting`}
-            className="inline-block border border-accent bg-accent/10 text-accent px-10 py-4 rounded-full text-lg hover:bg-accent hover:text-bg transition-all duration-500 ease-editorial"
-          >
-            {ctaCopy.cta}
-          </a>
-          <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 text-sm text-fg-subtle">
-            <a href={`mailto:${brand.email}`} className="hover:text-accent transition-colors">
-              {brand.email}
+          {/* Image side — slideshow, subtle Ken-Burns */}
+          <div className="relative w-full h-[320px] md:h-[520px] overflow-hidden">
+            {ctaSlides.map((src, i) => (
+              <div
+                key={i}
+                aria-hidden={i !== current}
+                className={`absolute inset-0 transition-opacity duration-[1600ms] ease-editorial ${
+                  i === current ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <div
+                  className="absolute inset-0 bg-cover"
+                  style={{
+                    backgroundImage: `url(${src})`,
+                    backgroundPosition: 'center 35%',
+                    transform: i === current ? 'scale(1.02)' : 'scale(1.1)',
+                    transition: 'transform 10s ease-out',
+                  }}
+                />
+              </div>
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-elevated md:to-transparent" />
+          </div>
+
+          {/* Copy side */}
+          <div className="px-6 pb-10 md:px-10 md:py-12 lg:px-14">
+            <p className="script-heading text-2xl md:text-3xl mb-5">{ctaCopy.eyebrow}</p>
+            <h2 className="editorial-display text-3xl md:text-4xl lg:text-5xl text-fg leading-[1.08] mb-6">
+              {ctaCopy.heading[0]}
+              <br />
+              {ctaCopy.heading[1]}
+            </h2>
+            <p className="text-sm md:text-base text-fg-muted leading-relaxed mb-8">
+              {ctaCopy.body}
+            </p>
+            <a
+              href={`mailto:${brand.email}?subject=Anfrage%20Shooting`}
+              className="inline-block border border-accent bg-accent/10 text-accent px-8 py-3.5 rounded-full text-base hover:bg-accent hover:text-bg transition-all duration-500 ease-editorial"
+            >
+              {ctaCopy.cta}
             </a>
-            <span className="hidden md:inline">•</span>
-            <span>{brand.phone}</span>
-            <span className="hidden md:inline">•</span>
-            <span>{brand.location}</span>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-fg-subtle">
+              <a href={`mailto:${brand.email}`} className="hover:text-accent transition-colors">
+                {brand.email}
+              </a>
+              <span className="text-fg-subtle/50">•</span>
+              <span>{brand.phone}</span>
+              <span className="text-fg-subtle/50">•</span>
+              <span>{brand.location}</span>
+            </div>
           </div>
         </motion.div>
       </div>

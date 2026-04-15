@@ -6,7 +6,7 @@ import { shuffleImages } from '@/lib/content'
 
 export function GalleryShuffle() {
   return (
-    <Section spacing="lg" variant="elevated">
+    <Section id="gallery" spacing="lg" variant="elevated">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <Eyebrow className="mb-6">Galerie</Eyebrow>

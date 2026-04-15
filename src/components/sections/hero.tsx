@@ -36,7 +36,7 @@ export function Hero() {
               className="absolute inset-0 bg-cover"
               style={{
                 backgroundImage: `url(${slide.img})`,
-                backgroundPosition: 'center 28%',
+                backgroundPosition: slide.position ?? 'center 30%',
                 transform: i === current ? 'scale(1)' : 'scale(1.06)',
                 transition: 'transform 8s ease-out',
               }}
@@ -81,7 +81,7 @@ export function Hero() {
             </h1>
 
             <p className="script-heading text-2xl md:text-3xl mt-8">
-              Scrolle — die Bilder öffnen sich.
+              Jeder Moment, ehrlich erzählt.
             </p>
 
             <p className="text-base md:text-lg text-fg-muted max-w-2xl mx-auto mt-6 leading-relaxed">
@@ -102,10 +102,10 @@ export function Hero() {
                 />
               </a>
               <a
-                href="#work"
+                href="#services"
                 className="inline-flex items-center justify-center gap-2 border border-fg/30 text-fg px-8 py-4 rounded-full hover:border-accent hover:text-accent transition-all duration-500 ease-editorial"
               >
-                Portfolio ansehen
+                Leistungen ansehen
               </a>
             </div>
 

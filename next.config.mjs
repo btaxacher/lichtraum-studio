@@ -14,18 +14,15 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', 'lucide-react', 'react-icons'],
   },
   async redirects() {
+    // One-pager mode — all former sub-routes redirect to homepage.
     return [
-      // Legacy anchor-URL paths (from Luna-Ferris single-page era, should anyone have bookmarked them)
-      { source: '/work', destination: '/portfolio', permanent: true },
-      { source: '/services', destination: '/leistungen/portraitfotograf', permanent: true },
-      { source: '/contact', destination: '/kontakt', permanent: true },
-      { source: '/about', destination: '/ueber-uns', permanent: true },
-      // Common keyword typos / alternative slugs
-      { source: '/hochzeit-koeln', destination: '/hochzeitsfotograf-koeln', permanent: true },
-      { source: '/bewerbungsfoto-koeln', destination: '/bewerbungsfotos-koeln', permanent: true },
-      { source: '/fotografin-koeln', destination: '/fotograf-koeln', permanent: true },
-      { source: '/fotograf-euskirchen', destination: '/', permanent: true },
-      { source: '/fotostudio-euskirchen', destination: '/', permanent: true },
+      { source: '/portfolio', destination: '/', permanent: false },
+      { source: '/leistungen/:slug*', destination: '/', permanent: false },
+      { source: '/fotograf/:slug*', destination: '/', permanent: false },
+      { source: '/blog/:slug*', destination: '/', permanent: false },
+      { source: '/ueber-uns', destination: '/', permanent: false },
+      { source: '/kontakt', destination: '/', permanent: false },
+      { source: '/preise', destination: '/', permanent: false },
     ]
   },
   async headers() {

@@ -1,5 +1,4 @@
 import { Hero } from '@/components/sections/hero'
-import { PortfolioParallax } from '@/components/sections/portfolio-parallax'
 import { Manifest } from '@/components/sections/manifest'
 import { Services } from '@/components/sections/services'
 import { GalleryShuffle } from '@/components/sections/gallery-shuffle'
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <Hero />
-      <PortfolioParallax />
       <Manifest />
       <Services />
       <GalleryShuffle />

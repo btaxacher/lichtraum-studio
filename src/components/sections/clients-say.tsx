@@ -7,7 +7,7 @@ import { TestimonialsMarquee } from '@/components/ui/testimonials-marquee'
 
 export function ClientsSay() {
   return (
-    <section className="relative w-full bg-bg-subtle py-32 md:py-48 overflow-hidden">
+    <section id="voices" className="relative w-full bg-bg-subtle py-32 md:py-48 overflow-hidden">
       {/* Contained header + big testimonial */}
       <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-12">
         <div className="relative text-center mb-16">

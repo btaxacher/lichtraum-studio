@@ -47,26 +47,32 @@ export const hero = {
       text: ['ZWISCHEN LICHT', 'UND SCHATTEN'],
       img: IMG('/images/hero/hero-01.jpg', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=85'),
       alt: 'Braut im Spitzenkleid bei natürlichem Licht',
+      position: 'center 30%',
     },
     {
       text: ['MOMENTE DIE', 'BLEIBEN'],
       img: IMG('/images/hero/hero-02.jpg', 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2400&q=85'),
       alt: 'Editorial Portrait im Seitenlicht',
+      position: 'center 25%',
     },
     {
+      // Palm trees with couple in lower portion — crop low so subjects stay visible
       text: ['EINE STILLE', 'DIE SPRICHT'],
       img: IMG('/images/hero/hero-03.jpg', 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=2400&q=85'),
       alt: 'Hochzeit im Goldlicht',
+      position: 'center 75%',
     },
     {
       text: ['DEINE GESCHICHTE', 'UNVERGESSEN'],
       img: IMG('/images/hero/hero-04.jpg', 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=2400&q=85'),
       alt: 'Braut und Bräutigam in Umarmung',
+      position: 'center 30%',
     },
     {
       text: ['ZEIT — EIN', 'EINZIGER RAHMEN'],
       img: IMG('/images/hero/hero-05.jpg', 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=2400&q=85'),
       alt: 'Editorial Schwarz-Weiß Portrait',
+      position: 'center 35%',
     },
   ],
 } as const
