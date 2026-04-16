@@ -483,9 +483,7 @@ export const contactContent = {
     'Egal ob Hochzeit 2027, Bewerbungsfoto nächste Woche oder das erste Familienshooting — erzähl uns, was du im Kopf hast. Wir melden uns innerhalb von 24 Stunden zurück. Versprochen.',
   contactList: [
     { icon: 'Mail', label: 'kontakt@fotograf-euskirchen.de', href: 'mailto:kontakt@fotograf-euskirchen.de' },
-    { icon: 'Phone', label: '02251 · 123 456  (Sipgate)', href: 'tel:+4922511234560' },
     { icon: 'MapPin', label: 'Euskirchen · Köln · Bonn · Rheinland' },
-    { icon: 'Instagram', label: '@lichtraum.studio', href: 'https://instagram.com/lichtraum.studio' },
   ],
   shootingTypes: [
     'Hochzeit',
@@ -504,7 +502,7 @@ export const contactContent = {
 export const footerContent = {
   brandName: 'Lichtraum',
   brandSub: 'Fotostudio',
-  tagline: 'Fotograf in Euskirchen.\nHochzeit, Portrait, Business —\nehrlich fotografiert, warm erzählt.',
+  tagline: 'Fotostudio in Euskirchen.\nHochzeiten, Portraits und Bewerbungsfotos\nzwischen Köln, Bonn und dem Rheinland.',
   servicesColumn: {
     title: 'Leistungen',
     links: [
