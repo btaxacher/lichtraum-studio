@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fraunces, DM_Sans, Playfair_Display } from 'next/font/google'
+import { Cormorant_Garamond, Inter, Parisienne } from 'next/font/google'
 import './globals.css'
 import { LenisProvider } from '@/components/providers/lenis-provider'
 import { Analytics } from '@/components/providers/analytics'
@@ -8,25 +8,24 @@ import { Footer } from '@/components/sections/footer'
 import { seo, brand } from '@/lib/content'
 import { SITE_URL } from '@/lib/site-url'
 
-const display = Fraunces({
+const display = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const body = DM_Sans({
+const body = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600'],
   variable: '--font-body',
   display: 'swap',
 })
 
-const script = Playfair_Display({
+const script = Parisienne({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['italic'],
+  weight: ['400'],
   variable: '--font-script',
   display: 'swap',
 })

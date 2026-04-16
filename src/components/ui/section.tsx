@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import { forwardRef, type HTMLAttributes } from 'react'
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
-  variant?: 'default' | 'elevated' | 'subtle'
+  variant?: 'default' | 'secondary' | 'charcoal' | 'elevated' | 'subtle'
   container?: boolean
   spacing?: 'sm' | 'md' | 'lg' | 'xl' | 'none'
 }
@@ -11,6 +11,9 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
   ({ className, variant = 'default', container = true, spacing = 'lg', children, ...props }, ref) => {
     const bg = {
       default: 'bg-bg',
+      secondary: 'bg-bg-secondary',
+      charcoal: 'bg-bg-charcoal text-fg-invert',
+      // Legacy-Aliase
       elevated: 'bg-bg-elevated',
       subtle: 'bg-bg-subtle',
     }[variant]
@@ -18,9 +21,9 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
     const pad = {
       none: '',
       sm: 'py-16 md:py-20',
-      md: 'py-20 md:py-32',
-      lg: 'py-24 md:py-40',
-      xl: 'py-32 md:py-48',
+      md: 'py-20 md:py-28',
+      lg: 'py-24 md:py-32',
+      xl: 'py-28 md:py-40',
     }[spacing]
 
     return (
@@ -51,10 +54,10 @@ export function EditorialHeading({
   ...props
 }: EditorialHeadingProps) {
   const sizes = {
-    sm: 'text-3xl md:text-4xl',
-    md: 'text-4xl md:text-5xl',
-    lg: 'text-5xl md:text-6xl',
-    xl: 'text-5xl md:text-7xl lg:text-8xl',
+    sm: 'text-2xl md:text-3xl',
+    md: 'text-3xl md:text-4xl',
+    lg: 'text-4xl md:text-5xl',
+    xl: 'text-5xl md:text-6xl',
   }[size]
 
   return (
@@ -72,6 +75,14 @@ export function EditorialHeading({
   )
 }
 
-export function Eyebrow({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <div className={cn('eyebrow', className)}>{children}</div>
+export function Eyebrow({
+  className,
+  children,
+  gold = false,
+}: {
+  className?: string
+  children: React.ReactNode
+  gold?: boolean
+}) {
+  return <div className={cn('eyebrow', gold && 'eyebrow-gold', className)}>{children}</div>
 }

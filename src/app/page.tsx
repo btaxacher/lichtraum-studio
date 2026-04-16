@@ -1,19 +1,27 @@
 import { Hero } from '@/components/sections/hero'
-import { Manifest } from '@/components/sections/manifest'
-import { Services } from '@/components/sections/services'
-import { GalleryShuffle } from '@/components/sections/gallery-shuffle'
+import { IntroGreeting } from '@/components/sections/intro-greeting'
+import { ServicesGrid } from '@/components/sections/services-grid'
+import { Gallery } from '@/components/sections/gallery'
 import { ClientsSay } from '@/components/sections/clients-say'
-import { CTA } from '@/components/sections/cta'
+import { PricingCards } from '@/components/sections/pricing-cards'
+import { JournalPreview } from '@/components/sections/journal-preview'
+import { StudioLocation } from '@/components/sections/studio-location'
+import { FaqAccordion } from '@/components/sections/faq-accordion'
+import { ContactForm } from '@/components/sections/contact-form'
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
       <Hero />
-      <Manifest />
-      <Services />
-      <GalleryShuffle />
+      <IntroGreeting />
+      <ServicesGrid />
+      <Gallery />
       <ClientsSay />
-      <CTA />
+      <PricingCards />
+      <JournalPreview />
+      <StudioLocation />
+      <FaqAccordion />
+      <ContactForm />
     </main>
   )
 }

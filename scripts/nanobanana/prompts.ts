@@ -1,10 +1,13 @@
 /**
- * Prompt bank for photography landing page.
- * Each prompt produces a single image via Gemini / Imagen.
+ * Prompt bank for Lichtraum Fotostudio — Warm Editorial Light redesign.
+ * Each prompt produces a single image via Gemini / Imagen (Nanobanana pipeline).
+ *
+ * All 21 images share the Kodak Portra 400 palette for visual cohesion across
+ * hero, services, gallery, testimonials, studio, journal.
  */
 
-const PREAMBLE =
-  'Editorial fine-art photography, cinematic color grading, soft moody warm tones, natural available light, shallow depth of field, 35mm film grain, high-end fashion / wedding photography feel. No text, no watermarks, no logos. Vertical composition, centered subject.'
+const WARM_PREAMBLE =
+  'Photorealistic editorial photography, Kodak Portra 400 color palette, warm creams, soft golds, muted greens, gentle film grain, natural available light, shallow depth of field, shot on Canon R5 with 85mm f/1.4, documentary authenticity (not posed stock photography), hands and faces clearly visible when present. No text, no watermarks, no logos.'
 
 export interface ImageJob {
   readonly key: string
@@ -13,60 +16,141 @@ export interface ImageJob {
 }
 
 export const JOBS: readonly ImageJob[] = [
-  // Hero slideshow — 5 full-bleed cinematic shots
-  { key: 'hero-01', filename: 'hero/hero-01.jpg', prompt: `${PREAMBLE} A bride in a flowing silk dress walking through a sunlit italian cypress garden at golden hour, backlight haze, serene, editorial.` },
-  { key: 'hero-02', filename: 'hero/hero-02.jpg', prompt: `${PREAMBLE} Close-up editorial portrait of a woman with flowing dark hair, side light, dramatic chiaroscuro shadow, soft warm skin tones, minimal styling.` },
-  { key: 'hero-03', filename: 'hero/hero-03.jpg', prompt: `${PREAMBLE} Wedding couple sharing a quiet moment on a dark-painted wood balcony, warm tungsten light, evening, Tuscan countryside visible in the blurred background.` },
-  { key: 'hero-04', filename: 'hero/hero-04.jpg', prompt: `${PREAMBLE} Groom embracing bride from behind, both in elegant neutral attire, overlooking a misty mountain landscape at blue hour, moody and intimate.` },
-  { key: 'hero-05', filename: 'hero/hero-05.jpg', prompt: `${PREAMBLE} Black and white editorial portrait of a young woman, hair in the wind, dark background, high contrast, ilford film stock look.` },
+  // ================================================================
+  // HERO — Single 3:4 vertical bride portrait (critical priority)
+  // ================================================================
+  {
+    key: 'hero-bride-golden-hour',
+    filename: 'redesign/hero-bride-golden-hour.jpg',
+    prompt: `${WARM_PREAMBLE} Vertical 3:4 aspect ratio (1600x2133). A bride in a simple flowing ivory silk dress stands in a golden-hour wheat field in the German Rhineland countryside near Euskirchen. She is looking away from camera, laughing softly, holding a small wildflower bouquet (cream peonies, eucalyptus, wheat stalks). Warm golden backlight, subtle sun flare in top-right corner. Soft bokeh trees in background (blurred, warm tones). No heavy makeup, natural beauty. Documentary feel, not posed.`,
+  },
 
-  // Services — 5 mood tiles
-  { key: 'sv-weddings', filename: 'services/weddings.jpg', prompt: `${PREAMBLE} Documentary wedding photography, first look moment between bride and groom in a sunlit chapel, timeless, warm.` },
-  { key: 'sv-portraits', filename: 'services/portraits.jpg', prompt: `${PREAMBLE} Editorial natural light portrait of a woman near a large window, dust motes in the air, linen curtains, soft skin, quiet mood.` },
-  { key: 'sv-couples', filename: 'services/couples.jpg', prompt: `${PREAMBLE} Couple walking hand-in-hand through tall grass at sunset, Mediterranean summer, backlight, editorial.` },
-  { key: 'sv-editorial', filename: 'services/editorial.jpg', prompt: `${PREAMBLE} High-fashion editorial spread, model in flowing couture dress, dramatic wind, seaside cliff, magazine feel.` },
-  { key: 'sv-destination', filename: 'services/destination.jpg', prompt: `${PREAMBLE} Destination wedding scene in a Moroccan desert, bride walking across dunes at dusk, distant oasis, painterly tones.` },
+  // ================================================================
+  // INTRO GREETING — 1:1 studio detail (no faces — studio is fictitious)
+  // ================================================================
+  {
+    key: 'studio-detail-hands',
+    filename: 'redesign/studio-detail-hands.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 aspect ratio (1400x1400). Close-up detail shot: two hands of a wedding photographer holding a vintage Hasselblad medium-format camera, warm natural window light streaming from the left. The hands are weathered and expressive, wearing a simple thin gold ring. Background softly blurred — a warm wood-paneled studio interior with dried pampas grass in a ceramic vase visible out of focus. Intimate, crafted, premium feel. No face visible.`,
+  },
 
-  // Parallax portfolio — 7 images
-  { key: 'p-01', filename: 'gallery/p-01.jpg', prompt: `${PREAMBLE} Bride detail — lace back of a wedding dress, soft shadow pattern from shutters, intimate.` },
-  { key: 'p-02', filename: 'gallery/p-02.jpg', prompt: `${PREAMBLE} Editorial portrait, 3/4 length, dark moody background, warm rim light.` },
-  { key: 'p-03', filename: 'gallery/p-03.jpg', prompt: `${PREAMBLE} Couple on a rocky Mediterranean beach, golden sun, minimal waves, romantic.` },
-  { key: 'p-04', filename: 'gallery/p-04.jpg', prompt: `${PREAMBLE} Wedding reportage — guests toasting champagne glasses, golden bokeh, candid, reportage.` },
-  { key: 'p-05', filename: 'gallery/p-05.jpg', prompt: `${PREAMBLE} Macro detail of antique engagement rings on aged velvet, warm lamp light, luxurious.` },
-  { key: 'p-06', filename: 'gallery/p-06.jpg', prompt: `${PREAMBLE} Golden hour portrait of a woman in a field of wheat, windswept hair, warm backlight.` },
-  { key: 'p-07', filename: 'gallery/p-07.jpg', prompt: `${PREAMBLE} Black and white profile portrait of a man, dramatic contrast, pensive.` },
+  // ================================================================
+  // SERVICES — 4 square cards
+  // ================================================================
+  {
+    key: 'service-hochzeit',
+    filename: 'redesign/service-hochzeit.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). A bride and groom embracing in late-afternoon warm light, groom leaning his forehead against bride's temple, both with eyes closed. Bride in simple ivory dress, groom in warm-toned beige suit with open collar. Background: soft-blurred garden with warm stone wall. Cinematic documentary style, natural unposed moment.`,
+  },
+  {
+    key: 'service-business',
+    filename: 'redesign/service-business.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Editorial business portrait of a professional woman in her early 30s, wearing a cream-colored blazer over a simple white shirt, looking directly at camera with a warm confident smile. Soft natural light from a large window on the left, creating gentle shadows. Background: muted warm-grey studio wall, slightly out of focus. Premium editorial style, no corporate stock vibes. 85mm f/2.8.`,
+  },
+  {
+    key: 'service-familie',
+    filename: 'redesign/service-familie.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Editorial family photograph — a young family (mother in her 30s, father, and a 3-year-old child) walking hand-in-hand through a sunlit wheat field in the Rhineland. All in warm earth-tone clothing (cream, sand, rust). Child is laughing mid-stride. Golden-hour backlight, soft flare. Candid documentary feel.`,
+  },
+  {
+    key: 'service-babybauch',
+    filename: 'redesign/service-babybauch.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Editorial maternity photograph — a pregnant woman in her third trimester, wearing a flowing cream silk dress, standing sideways against a warm sand-colored studio wall. Her hands rest gently on her belly. Soft diffused window light from above-left. Fine art portrait style, minimal, intimate. Warm creamy tones.`,
+  },
 
-  // Masonry editorial — 8 varied vertical/square
-  { key: 'm-01', filename: 'masonry/m-01.jpg', prompt: `${PREAMBLE} Bride and groom in Tuscan cypresses, wide shot, summer, warm palette.` },
-  { key: 'm-02', filename: 'masonry/m-02.jpg', prompt: `${PREAMBLE} Editorial Berlin urban portrait, concrete wall, woman in minimal black dress.` },
-  { key: 'm-03', filename: 'masonry/m-03.jpg', prompt: `${PREAMBLE} Engagement couple on Amalfi coast cliffside, dramatic sea below, sunset.` },
-  { key: 'm-04', filename: 'masonry/m-04.jpg', prompt: `${PREAMBLE} Intimate studio portrait, soft window light, sparse atelier, artist mood.` },
-  { key: 'm-05', filename: 'masonry/m-05.jpg', prompt: `${PREAMBLE} Alpine South-Tyrol mountain wedding, couple in front of snow-capped peaks, wool blankets, warm.` },
-  { key: 'm-06', filename: 'masonry/m-06.jpg', prompt: `${PREAMBLE} Pregnancy portrait in soft window light, silk draping, serene, muted palette.` },
-  { key: 'm-07', filename: 'masonry/m-07.jpg', prompt: `${PREAMBLE} Berlin city-hall wedding, small bouquet, sunlit hallway, documentary feel.` },
-  { key: 'm-08', filename: 'masonry/m-08.jpg', prompt: `${PREAMBLE} High-fashion editorial in abandoned industrial space, dramatic shadow, model in oversized coat.` },
+  // ================================================================
+  // GALLERY — 9 masonry images (cohesive Portra 400 palette)
+  // ================================================================
+  {
+    key: 'gallery-01-kiss',
+    filename: 'redesign/gallery-01-kiss.jpg',
+    prompt: `${WARM_PREAMBLE} Portrait 4:5 aspect ratio (1600x2000). Wedding couple's first kiss under a warm afternoon sun, golden light flare visible, soft green vineyard background, intimate and candid.`,
+  },
+  {
+    key: 'gallery-02-rings',
+    filename: 'redesign/gallery-02-rings.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Close-up detail of two simple gold wedding rings resting on a folded linen napkin with dried eucalyptus sprig, natural window light, warm tones, shallow focus.`,
+  },
+  {
+    key: 'gallery-03-bride',
+    filename: 'redesign/gallery-03-bride.jpg',
+    prompt: `${WARM_PREAMBLE} Vertical 3:4 (1200x1600). Bride in profile looking out of a window, sheer linen curtain catching morning light, cream dress, contemplative mood.`,
+  },
+  {
+    key: 'gallery-04-family',
+    filename: 'redesign/gallery-04-family.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Parent lifting toddler mid-air, both laughing, cream and sand-tone clothing, outdoor warm afternoon light, candid.`,
+  },
+  {
+    key: 'gallery-05-couple-field',
+    filename: 'redesign/gallery-05-couple-field.jpg',
+    prompt: `${WARM_PREAMBLE} Horizontal 3:2 (1800x1200). Engaged couple walking through a wheat field at golden hour, holding hands, back to camera, warm backlight, romantic.`,
+  },
+  {
+    key: 'gallery-06-business',
+    filename: 'redesign/gallery-06-business.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Professional man in cream knit sweater, three-quarter profile, warm studio light, subtle confident expression.`,
+  },
+  {
+    key: 'gallery-07-maternity',
+    filename: 'redesign/gallery-07-maternity.jpg',
+    prompt: `${WARM_PREAMBLE} Vertical 3:4 (1200x1600). Silhouette of pregnant woman against a sheer curtained window, soft diffused morning light, serene and intimate.`,
+  },
+  {
+    key: 'gallery-08-flowers',
+    filename: 'redesign/gallery-08-flowers.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1200x1200). Top-down shot of a bridal bouquet (cream peonies, eucalyptus, wheat stalks) on a weathered wood table, warm lamp light, editorial.`,
+  },
+  {
+    key: 'gallery-09-firstdance',
+    filename: 'redesign/gallery-09-firstdance.jpg',
+    prompt: `${WARM_PREAMBLE} Horizontal 3:2 (1800x1200). First dance in a softly lit barn venue, warm bistro lights bokeh in background, couple in an embrace, intimate documentary feel.`,
+  },
 
-  // Shuffle grid — 16 mixed images
-  ...Array.from({ length: 16 }, (_, i) => ({
-    key: `shuffle-${i + 1}`,
-    filename: `shuffle/s-${String(i + 1).padStart(2, '0')}.jpg`,
-    prompt: `${PREAMBLE} Wedding or portrait photography — varied scenes: ${['bride walking','couple laughing','detail shot rings','flower bouquet','groom portrait','hands holding','editorial dress','candid reception','sunlit kiss','black and white portrait','mother daughter','family gathering','natural light bride','outdoor ceremony','first dance','golden hour embrace'][i]}. Cinematic, warm, editorial.`,
-  })),
+  // ================================================================
+  // AVATARS — 3 Testimonial headshots
+  // ================================================================
+  {
+    key: 'avatar-emilia',
+    filename: 'redesign/avatar-emilia.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a woman in her late 20s with brown hair in a loose braid, gentle smile, cream-colored sweater, soft natural window light.`,
+  },
+  {
+    key: 'avatar-sofia',
+    filename: 'redesign/avatar-sofia.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a woman in her mid 30s, short dark hair, subtle confident smile, white blouse, soft daylight.`,
+  },
+  {
+    key: 'avatar-marie',
+    filename: 'redesign/avatar-marie.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a couple in their early 30s, both smiling softly at camera, warm beige clothing, soft natural light.`,
+  },
 
-  // Behind-the-scenes trail — 6 small square shots
-  ...Array.from({ length: 6 }, (_, i) => ({
-    key: `trail-${i + 1}`,
-    filename: `trail/t-0${i + 1}.jpg`,
-    prompt: `${PREAMBLE} Behind-the-scenes wedding moment — ${['photographer camera in hand','detail shot of bouquet','bride laughing','children playing','champagne toast','sunset silhouette'][i]}. Square aspect ratio.`,
-  })),
+  // ================================================================
+  // JOURNAL — 3 blog cards (16:10)
+  // ================================================================
+  {
+    key: 'blog-01-locations',
+    filename: 'redesign/blog-01-locations.jpg',
+    prompt: `${WARM_PREAMBLE} 16:10 aspect ratio (1400x875). Beautiful castle wedding venue in the Rhineland, golden-hour exterior with ivy growing on warm stone walls, distant vineyards visible, romantic editorial feel.`,
+  },
+  {
+    key: 'blog-02-outfit',
+    filename: 'redesign/blog-02-outfit.jpg',
+    prompt: `${WARM_PREAMBLE} 16:10 aspect ratio (1400x875). Minimalist flat-lay on cream linen of a professional outfit: cream blazer folded, simple gold jewelry, leather notebook, fountain pen, small eucalyptus sprig. Natural morning light, editorial.`,
+  },
+  {
+    key: 'blog-03-preparation',
+    filename: 'redesign/blog-03-preparation.jpg',
+    prompt: `${WARM_PREAMBLE} 16:10 aspect ratio (1400x875). Bride-to-be getting ready, soft morning light through linen curtains, dressing-table detail with perfume bottle and fresh flowers in a ceramic vase, intimate and quiet.`,
+  },
 
-  // Big testimonial
-  { key: 'big-testimonial', filename: 'testimonial/big-01.jpg', prompt: `${PREAMBLE} Cinematic wedding scene — wide shot, bride and groom small within a vast Tuscan landscape, dusk, warm ambient light.` },
-
-  // Avatars (8)
-  ...Array.from({ length: 8 }, (_, i) => ({
-    key: `avatar-${i + 1}`,
-    filename: `avatars/a${i + 1}.jpg`,
-    prompt: `Natural portrait headshot, soft warm lighting, editorial look, ${['young woman','young man','smiling woman','older woman','man with beard','young woman with long hair','woman with short hair','man with glasses'][i]}, clean neutral background, no props.`,
-  })),
+  // ================================================================
+  // STUDIO — interior 1:1
+  // ================================================================
+  {
+    key: 'studio-interior',
+    filename: 'redesign/studio-interior.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (1400x1400). Interior of a warm photography studio in Germany. Natural daylight streaming through a large window on the left. Key elements: a simple wooden chair, a cream linen backdrop, a Hasselblad camera on a wooden stand, dried pampas grass in a tall ceramic vase, warm wood floor, exposed wooden beams on the ceiling. Color palette: creams, warm whites, soft golds, light oak wood. Intimate, crafted, not clinical. No people visible.`,
+  },
 ]
