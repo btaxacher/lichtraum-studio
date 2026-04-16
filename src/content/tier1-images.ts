@@ -33,14 +33,14 @@ const BUSINESS = [
 const FAMILY = [
   'photo-1511895426328-dc8714191300', // Family field
   'photo-1511895426328-dc8714191300', // Family laugh
-  'photo-1528038136358-36e13a1e0f49', // Family home
+  'photo-1542810634-71277d95dcbb', // Family outdoor
   'photo-1542810634-71277d95dcbb', // Parents & child
 ]
 
 const MATERNITY = [
   'photo-1555252333-9f8e92e65df9', // Maternity silhouette
   'photo-1516627145497-ae6968895b74', // Pregnant window
-  'photo-1528827367234-1f1ca3e99b6a', // Bump detail
+  'photo-1617103996702-96ff29b1c467', // Warm studio
   'photo-1617103996702-96ff29b1c467', // Studio warm
 ]
 
@@ -60,10 +60,11 @@ type ImageSet = {
 const pickGallery = (
   ids: string[],
   altTemplate: (i: number) => string,
+  genericAlt = 'Editorial Portrait in warmem Licht',
 ): ImageSet['gallery'] =>
   ids.slice(0, 9).map((id, i) => ({
     src: U(id, 1200),
-    alt: altTemplate(i),
+    alt: altTemplate(i) || genericAlt,
     aspect: i % 3 === 0 ? 'portrait' : i % 3 === 1 ? 'landscape' : 'square',
   }))
 
@@ -133,6 +134,8 @@ export const tier1Images: Record<string, ImageSet> = {
       'Express-Bewerbungsfoto innerhalb 24 Stunden',
       'Outfit-Beratung für Bewerbungstermin',
       'Bewerbungsbild im Lichtraum Studio Euskirchen',
+      'Corporate Headshot im neutralen Studiolicht',
+      'Branchen-passendes Bewerbungsporträt',
     ][i]),
   },
 
@@ -185,6 +188,8 @@ export const tier1Images: Record<string, ImageSet> = {
       'Babybauch outdoor zur Golden Hour',
       'Werdende Eltern mit Geschwisterkind',
       'Schwangerschaftsportrait editorial',
+      'Intimes Babybauch-Portrait im Studiolicht',
+      'Werdende Mutter am Fenster, Spitzenkleid',
     ][i]),
   },
 

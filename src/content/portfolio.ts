@@ -33,7 +33,7 @@ export const portfolioItems: PortfolioItem[] = [
   { src: U('photo-1617103996702-96ff29b1c467', 1200), alt: 'Studiolicht-Detail in warmem Goldton', category: 'studio', span: 'medium' },
   { src: U('photo-1606800052052-a08af7148866', 1200), alt: 'Hände halten Hasselblad-Kamera im warmen Studiolicht', category: 'studio', span: 'small' },
   { src: U('photo-1516627145497-ae6968895b74', 1200), alt: 'Werdende Mutter am Fenster in Seidenkleid', category: 'babybauch', span: 'medium' },
-  { src: U('photo-1528038136358-36e13a1e0f49', 1200), alt: 'Familie zu Hause im warmen Nachmittagslicht', category: 'familie', span: 'small' },
+  { src: U('photo-1511895426328-dc8714191300', 1200), alt: 'Familie zu Hause im warmen Nachmittagslicht', category: 'familie', span: 'small' },
   { src: U('photo-1551836022-aadb801c60ae', 1200), alt: 'Business-Frau in cremefarbenem Blazer bei Golden Hour', category: 'business', span: 'large' },
   { src: U('photo-1487412720507-e7ab37603c6f', 1200), alt: 'Editorial-Portrait einer Frau im Seitenlicht', category: 'portrait', span: 'medium' },
   { src: U('photo-1511285560929-80b456fea0bc', 1200), alt: 'Kirchliche Trauung mit Gästen im Seitenschiff', category: 'hochzeit', span: 'small' },
