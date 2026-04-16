@@ -44,7 +44,7 @@ export const seo = {
 // - Primary: /images/redesign/* (Nanobanana, warm Kodak Portra 400)
 // - Fallback: Unsplash URLs mit warm-light IDs (bis Nanobanana ausgeführt)
 // Nach Nanobanana-Run: USE_LOCAL = true flippen.
-const USE_LOCAL = false
+const USE_LOCAL = true
 
 const IMG = (local: string, remote: string) => (USE_LOCAL ? local : remote)
 
