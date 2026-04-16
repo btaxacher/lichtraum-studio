@@ -513,6 +513,8 @@ export const footerContent = {
       { label: 'Fotoshooting Köln', href: '/fotoshooting-koeln' },
       { label: 'Fotograf Köln', href: '/fotograf-koeln' },
       { label: 'Babybauch Köln', href: '/schwangerschaftsfotos-koeln' },
+      { label: 'Business Köln', href: '/businessfotograf-koeln' },
+      { label: 'Portfolio', href: '/portfolio' },
     ],
   },
   navColumn: {
