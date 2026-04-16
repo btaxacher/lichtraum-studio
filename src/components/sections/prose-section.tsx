@@ -1,25 +1,36 @@
-import type { ReactNode } from 'react'
-
 type Props = {
+  h2?: string
   eyebrow?: string
-  title?: string
-  children: ReactNode
-  maxWidth?: 'narrow' | 'medium' | 'wide'
+  body: string[]
+  variant?: 'default' | 'sand'
+  id?: string
 }
 
-export function ProseSection({ eyebrow, title, children, maxWidth = 'medium' }: Props) {
-  const widths = { narrow: 'max-w-[680px]', medium: 'max-w-[880px]', wide: 'max-w-[1100px]' }
+/**
+ * Long-form prose block with optional H2 heading.
+ * Max-width 68ch für optimale Readability. Serif display headings, sans body.
+ * `variant='sand'` für Section-Wechsel (bg-bg-secondary).
+ */
+export function ProseSection({ h2, eyebrow, body, variant = 'default', id }: Props) {
+  const bg = variant === 'sand' ? 'bg-bg-secondary' : 'bg-bg'
   return (
-    <section className="py-16 md:py-24 border-b border-border-soft">
-      <div className={`mx-auto ${widths[maxWidth]} px-5 md:px-8 lg:px-12`}>
-        {eyebrow && (
-          <div className="eyebrow text-accent mb-4">{eyebrow}</div>
-        )}
-        {title && (
-          <h2 className="editorial-display text-3xl md:text-5xl text-fg mb-8 leading-[1.1]">{title}</h2>
-        )}
-        <div className="prose prose-invert max-w-none text-fg/85 text-lg leading-relaxed space-y-5 font-light">
-          {children}
+    <section id={id} className={`${bg} py-14 md:py-20`}>
+      <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-12">
+        <div className="max-w-[68ch] mx-auto">
+          {eyebrow ? <p className="eyebrow eyebrow-gold mb-4">{eyebrow}</p> : null}
+          {h2 ? (
+            <h2
+              className="editorial-display text-fg mb-6 md:mb-8 leading-[1.1] tracking-tight"
+              style={{ fontSize: 'clamp(1.8rem, 3.4vw, 2.6rem)', fontWeight: 500 }}
+            >
+              {h2}
+            </h2>
+          ) : null}
+          <div className="prose-warm space-y-4 text-fg-muted text-base md:text-lg leading-[1.75]">
+            {body.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
