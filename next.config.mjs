@@ -14,15 +14,17 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', 'lucide-react', 'react-icons'],
   },
   async redirects() {
-    // One-pager mode — all former sub-routes redirect to homepage.
+    // Keyword-typo + legacy-slug 301s. Real sub-page routing lives in src/app/.
     return [
-      { source: '/portfolio', destination: '/', permanent: false },
-      { source: '/leistungen/:slug*', destination: '/', permanent: false },
-      { source: '/fotograf/:slug*', destination: '/', permanent: false },
-      { source: '/blog/:slug*', destination: '/', permanent: false },
-      { source: '/ueber-uns', destination: '/', permanent: false },
-      { source: '/kontakt', destination: '/', permanent: false },
-      { source: '/preise', destination: '/', permanent: false },
+      // Keyword-typos → canonical tier-1 slugs (SEO consolidation)
+      { source: '/hochzeit-koeln', destination: '/hochzeitsfotograf-koeln', permanent: true },
+      { source: '/hochzeit-euskirchen', destination: '/hochzeitsfotograf-euskirchen', permanent: true },
+      { source: '/fotografin-koeln', destination: '/fotograf-koeln', permanent: true },
+      { source: '/fotografin-euskirchen', destination: '/fotograf-euskirchen', permanent: true },
+      // Legacy English → German canonical
+      { source: '/work', destination: '/portfolio', permanent: true },
+      { source: '/about', destination: '/ueber-uns', permanent: true },
+      { source: '/contact', destination: '/kontakt', permanent: true },
     ]
   },
   async headers() {
