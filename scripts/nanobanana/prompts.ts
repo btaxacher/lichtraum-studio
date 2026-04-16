@@ -125,6 +125,21 @@ export const JOBS: readonly ImageJob[] = [
     filename: 'redesign/avatar-marie.jpg',
     prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a couple in their early 30s, both smiling softly at camera, warm beige clothing, soft natural light.`,
   },
+  {
+    key: 'avatar-charlotte',
+    filename: 'redesign/avatar-charlotte.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a young engaged couple in their late 20s, woman with long dark hair, man with short brown hair and stubble, foreheads gently touching, both looking slightly off-camera with soft smiles, warm cream and sand tones in their clothing, soft golden-hour light.`,
+  },
+  {
+    key: 'avatar-elena',
+    filename: 'redesign/avatar-elena.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a woman in her early 40s, honey-blonde shoulder-length hair, calm confident expression, minimalist cream turtleneck, very soft diffused studio light from the left, shallow depth of field.`,
+  },
+  {
+    key: 'avatar-helena',
+    filename: 'redesign/avatar-helena.jpg',
+    prompt: `${WARM_PREAMBLE} Square 1:1 (400x400). Warm editorial close-up headshot of a pregnant woman in her early 30s, auburn hair loosely pinned up, natural makeup, gentle introspective smile looking slightly down and to the side, flowing warm-ivory silk dress, soft window light.`,
+  },
 
   // ================================================================
   // JOURNAL — 3 blog cards (16:10)
