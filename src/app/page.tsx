@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections/hero'
 import { IntroGreeting } from '@/components/sections/intro-greeting'
 import { ServicesGrid } from '@/components/sections/services-grid'
 import { Gallery } from '@/components/sections/gallery'
+import { CursorTrail } from '@/components/sections/cursor-trail'
 import { ClientsSay } from '@/components/sections/clients-say'
 import { PricingCards } from '@/components/sections/pricing-cards'
 import { JournalPreview } from '@/components/sections/journal-preview'
@@ -16,6 +17,7 @@ export default function Home() {
       <IntroGreeting />
       <ServicesGrid />
       <Gallery />
+      <CursorTrail />
       <ClientsSay />
       <PricingCards />
       <JournalPreview />

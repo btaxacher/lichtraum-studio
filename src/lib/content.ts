@@ -412,7 +412,7 @@ export const studioContent = {
   script: 'Hier entstehen Bilder.',
   h2: 'Unser Studio in Euskirchen — und zuhause, wo ihr es wünscht.',
   body:
-    'Unser Fotostudio in Euskirchen ist hell, warm und klein genug, um euch nicht zu erschlagen. Ein paar Meter weiter liegt der Rhein-Erft-Kreis, nach Köln sind es 40 Minuten, nach Bonn 35. Für Hochzeiten und Familienshootings kommen wir zu euch — ob Rheinaue, Altenberger Dom, das Weingut bei Bonn oder euer Garten in Weilerswist.',
+    'Unser Studio liegt in Euskirchen, direkt an der A1. Keine grelle Halle, keine Leuchtkästen — ein Raum mit Tageslicht, altem Holzboden und einem Sofa, auf dem ihr vor dem Shooting erstmal ankommen könnt. Nach Köln sind es 40 Minuten, nach Bonn 35. Für Hochzeiten und Familien-Shootings kommen wir zu euch: Rheinaue, Altenberger Dom, Weingut bei Bonn, Garten in Weilerswist. Sagt uns, wo ihr seid.',
   infoGrid: [
     {
       icon: 'MapPin',
