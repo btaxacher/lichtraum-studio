@@ -49,12 +49,12 @@ export function CursorTrail() {
 
       {/* Editorial Heading — zentriert, uebergross */}
       <div className="relative z-10 select-none pointer-events-none text-center px-5">
-        <p className="script-heading text-3xl md:text-4xl lg:text-[3rem] mb-3 md:mb-5">
+        <p className="script-heading text-4xl md:text-5xl lg:text-[4.5rem] mb-3 md:mb-5">
           Momente,
         </p>
         <h2
-          className="editorial-display text-fg leading-[0.9] tracking-tight"
-          style={{ fontSize: 'clamp(3.5rem, 14vw, 12rem)', fontWeight: 500 }}
+          className="editorial-display text-fg leading-[0.95] tracking-tight"
+          style={{ fontSize: 'clamp(2.8rem, 10vw, 8.5rem)', fontWeight: 500 }}
         >
           die bleiben.
         </h2>
