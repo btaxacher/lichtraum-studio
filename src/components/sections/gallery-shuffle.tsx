@@ -18,7 +18,7 @@ export function GalleryShuffle() {
             Jahre. Die Bilder mischen sich — wie Erinnerungen es tun.
           </p>
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-block mt-8 border-b border-accent text-accent hover:text-fg hover:border-fg transition-colors pb-1"
           >
             Volle Portfolios anfragen →

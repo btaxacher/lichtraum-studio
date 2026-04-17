@@ -21,7 +21,7 @@ export function SubPageHero({
   h1,
   subtitle,
   image,
-  primaryCta = { label: 'Termin anfragen', href: '/#kontakt' },
+  primaryCta = { label: 'Termin anfragen', href: '/#contact' },
   secondaryCta,
 }: Props) {
   return (

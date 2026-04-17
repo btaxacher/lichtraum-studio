@@ -94,8 +94,8 @@ export const heroContent = {
   h1: ['Fotograf Euskirchen\u00A0', 'für Köln, Bonn & das Rheinland'],
   body:
     'Hochzeiten, Bewerbungsfotos, Portraits und Familienmomente. Ohne Posen-Regie, ohne Eile — wir nehmen uns Zeit, bis das Bild von allein passiert. Termine für 2026 und 2027 jetzt anfragen.',
-  primaryCta: { label: 'Termin anfragen', href: '#contact' },
-  secondaryCta: { label: 'Unsere Arbeit ansehen', href: '#gallery' },
+  primaryCta: { label: 'Termin anfragen', href: '/#contact' },
+  secondaryCta: { label: 'Unsere Arbeit ansehen', href: '/#gallery' },
   trustItems: [
     'Antwort innerhalb 24 Stunden',
     'Faire Festpreise ab 290 €',
@@ -331,7 +331,7 @@ export const pricingCards = [
       'Outfit-Beratung vorab',
       'Express-Lieferung 48 h',
     ],
-    cta: { label: 'Termin anfragen', href: '#contact' },
+    cta: { label: 'Termin anfragen', href: '/#contact' },
     highlight: false,
   },
   {
@@ -345,7 +345,7 @@ export const pricingCards = [
       'Online-Galerie zum Teilen',
       'Print-Upgrade optional',
     ],
-    cta: { label: 'Termin anfragen', href: '#contact' },
+    cta: { label: 'Termin anfragen', href: '/#contact' },
     highlight: true,
     badge: 'BELIEBT',
   },
@@ -360,7 +360,7 @@ export const pricingCards = [
       'Premium Online-Galerie',
       'Zweitfotograf:in optional',
     ],
-    cta: { label: 'Unverbindlich anfragen', href: '#contact' },
+    cta: { label: 'Unverbindlich anfragen', href: '/#contact' },
     highlight: false,
   },
 ] as const
@@ -551,8 +551,8 @@ export const footerContent = {
     title: 'Über Lichtraum',
     links: [
       { label: 'Portfolio', href: '/portfolio' },
-      { label: 'Preise', href: '#pricing' },
-      { label: 'Kontakt', href: '#contact' },
+      { label: 'Preise', href: '/#pricing' },
+      { label: 'Kontakt', href: '/#contact' },
       { label: 'Impressum', href: '/impressum' },
       { label: 'Datenschutz', href: '/datenschutz' },
     ],

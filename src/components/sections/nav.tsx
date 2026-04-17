@@ -6,14 +6,15 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { brand } from '@/lib/content'
 
+// Absolute anchor-links (/#...) damit Navigation auch von Sub-Pages funktioniert
 const links = [
-  { href: '#about', label: 'Studio' },
-  { href: '#services', label: 'Leistungen' },
-  { href: '#gallery', label: 'Galerie' },
-  { href: '#voices', label: 'Stimmen' },
-  { href: '#pricing', label: 'Preise' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#contact', label: 'Kontakt' },
+  { href: '/#about', label: 'Studio' },
+  { href: '/#services', label: 'Leistungen' },
+  { href: '/#gallery', label: 'Galerie' },
+  { href: '/#voices', label: 'Stimmen' },
+  { href: '/#pricing', label: 'Preise' },
+  { href: '/#journal', label: 'Journal' },
+  { href: '/#contact', label: 'Kontakt' },
 ] as const
 
 export function Nav() {
@@ -69,7 +70,7 @@ export function Nav() {
           ))}
 
           <a
-            href="#contact"
+            href="/#contact"
             className="text-sm bg-accent-gold text-bg-charcoal px-4 py-2 rounded-full hover:bg-accent-terra hover:text-fg-invert transition-colors duration-300"
           >
             Termin anfragen
@@ -103,7 +104,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={closeMenu}
               className="mt-4 inline-flex items-center justify-center bg-accent-gold text-bg-charcoal px-4 py-3 rounded-full text-sm font-medium"
             >

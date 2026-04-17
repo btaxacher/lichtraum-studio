@@ -13,7 +13,7 @@ export function SubPagePricing({
   heading = 'Pakete & Preise',
   eyebrow = 'Transparent',
   items,
-  cta = { label: 'Individuelles Angebot anfragen', href: '/#kontakt' },
+  cta = { label: 'Individuelles Angebot anfragen', href: '/#contact' },
 }: Props) {
   return (
     <section className="bg-bg-secondary py-14 md:py-20">

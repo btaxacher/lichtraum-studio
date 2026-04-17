@@ -10,7 +10,7 @@ type Props = {
 export function SubPageCta({
   heading,
   body,
-  primaryCta = { label: 'Jetzt Termin anfragen', href: '/#kontakt' },
+  primaryCta = { label: 'Jetzt Termin anfragen', href: '/#contact' },
 }: Props) {
   return (
     <section className="bg-bg-charcoal text-fg-invert py-16 md:py-24">
