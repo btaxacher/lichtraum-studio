@@ -13,8 +13,9 @@ import { nrwHubContent } from '@/content/nrw-hub-content'
 import { buildMetadata } from '@/lib/metadata'
 
 const heroImage = {
-  src: 'https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1400&q=85',
-  alt: 'Brautpaar bei Golden Hour in einer Rheinland-Landschaft',
+  // V3 — lokales Bild statt Unsplash (nano-banana Kodak Portra 400)
+  src: '/images/redesign/gallery-05-couple-field.jpg',
+  alt: 'Brautpaar bei Golden Hour in einer Rheinland-Landschaft — Hochzeitsfotograf NRW',
 }
 
 export function nrwHubMetadata(): Metadata {

@@ -143,7 +143,7 @@ export const datenschutzContent = {
     {
       h2: '8. Externe Bildressourcen',
       paragraphs: [
-        'Derzeit werden einige Platzhalter-Fotos dynamisch von images.unsplash.com geladen. Diese Abrufe übermitteln Ihre IP-Adresse an Unsplash Inc. (USA). Datenschutzerklärung: https://unsplash.com/privacy. Ab einer künftigen Migrationsrunde werden alle Bilder lokal ausgeliefert; diese Erklärung wird dann aktualisiert.',
+        'Alle auf dieser Website gezeigten Bilder werden lokal von unserem Server ausgeliefert. Es werden keine externen Bild-Dienste (wie Unsplash, Getty oder ähnliche) eingebunden. Beim Laden der Bilder wird keine Verbindung zu Drittanbietern hergestellt.',
       ],
     },
     {

@@ -1,191 +1,160 @@
-const U = (id: string, w = 1400) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`
+/**
+ * Hero + Gallery-Bild-Mapping pro City-Page.
+ * V3: Vollständig migriert auf lokale Nano-Banana-Bilder.
+ *
+ * Jede Stadt bekommt:
+ *   - Hero: 1x City-Shot aus /images/cities/{city}.jpg
+ *   - Gallery: Mix aus wedding/ + family/ + portfolio/ + cities/ Pools
+ *     (pro Stadt unterschiedliche Kombination, keine Copy-Paste)
+ */
 
 type ImageSet = {
   hero: { src: string; alt: string }
   gallery: { src: string; alt: string; aspect?: 'portrait' | 'landscape' | 'square' }[]
 }
 
-const pickGallery = (
-  ids: string[],
-  altTemplate: (i: number) => string,
-  genericAlt = 'Warm-editorial Portrait im Rheinland',
-): ImageSet['gallery'] =>
-  ids.slice(0, 6).map((id, i) => ({
-    src: U(id, 1200),
-    alt: altTemplate(i) || genericAlt,
-    aspect: i % 3 === 0 ? 'portrait' : i % 3 === 1 ? 'landscape' : 'square',
-  }))
-
-const WEDDING = [
-  'photo-1606216794074-735e91aa2c92',
-  'photo-1522673607200-164d1b6ce486',
-  'photo-1519741497674-611481863552',
-  'photo-1464207687429-7505649dae38',
-  'photo-1525258946800-98cfd641d0de',
-  'photo-1529634597503-139d3726fed5',
-]
-
-const PORTRAIT = [
-  'photo-1524504388940-b1c1722653e1',
-  'photo-1531746020798-e6953c6e8e04',
-  'photo-1487412720507-e7ab37603c6f',
-  'photo-1515886657613-9f3515b0c78f',
-  'photo-1580489944761-15a19d654956',
-  'photo-1438761681033-6461ffad8d80',
-]
-
-const MIXED = [
-  'photo-1606216794074-735e91aa2c92',
-  'photo-1573496359142-b8d87734a5a2',
-  'photo-1511895426328-dc8714191300',
-  'photo-1542810634-71277d95dcbb',
-  'photo-1519741497674-611481863552',
-  'photo-1555252333-9f8e92e65df9',
-]
-
 export const cityPageImages: Record<string, ImageSet> = {
   'fotograf-bonn': {
-    hero: { src: U('photo-1522673607200-164d1b6ce486', 1400), alt: 'Paarshooting an der Bonner Rheinaue zur Golden Hour' },
-    gallery: pickGallery(MIXED, (i) => [
-      'Brautpaar am Bonner Rheinufer',
-      'Business-Portrait im Bonner Regierungsviertel',
-      'Familien-Shoot in der Rheinaue',
-      'Paar in der Kirschblütenallee im April',
-      'Detail-Aufnahme eines Hochzeitsstraußes',
-      'Babybauch-Portrait am Rhein',
-    ][i]),
+    hero: { src: '/images/cities/bonn.jpg', alt: 'Fotograf Bonn — Rheinaue Park bei goldenem Nachmittagslicht' },
+    gallery: [
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Brautpaar am Bonner Rheinufer', aspect: 'portrait' },
+      { src: '/images/portfolio/06-business-founder.jpg', alt: 'Business-Portrait im Bonner Regierungsviertel', aspect: 'landscape' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familien-Shoot in der Rheinaue', aspect: 'square' },
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Paarportrait bei der Poppelsdorfer Allee', aspect: 'portrait' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Detail-Aufnahme Hochzeitsringe Bonn', aspect: 'landscape' },
+      { src: '/images/family/04-maternity-studio.jpg', alt: 'Babybauch-Portrait — Fotograf Bonn', aspect: 'square' },
+    ],
   },
 
   'hochzeitsfotograf-bonn': {
-    hero: { src: U('photo-1525258946800-98cfd641d0de', 1400), alt: 'Braut auf der Petersberg-Terrasse mit Rheinblick' },
-    gallery: pickGallery(WEDDING, (i) => [
-      'Hochzeit im Petersberg Hotel Königswinter',
-      'Brautpaar in der Redoute Bad Godesberg',
-      'Detailaufnahme Eheringe vor Rheinbogen',
-      'Erster Tanz auf Schloss Drachenburg',
-      'Paar in der Bonner Kirschblütenallee',
-      'Kirchliche Trauung im Kurfürstlichen Schloss',
-    ][i]),
+    hero: { src: '/images/cities/bonn.jpg', alt: 'Hochzeitsfotograf Bonn — Rheinaue mit Siebengebirge im Hintergrund' },
+    gallery: [
+      { src: '/images/wedding/10-kuss-kirche.jpg', alt: 'Hochzeit im Kurfürstlichen Schloss Bonn', aspect: 'portrait' },
+      { src: '/images/wedding/08-stehempfang.jpg', alt: 'Empfang in der Redoute Bad Godesberg', aspect: 'landscape' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Eheringe-Detail vor Rheinbogen', aspect: 'square' },
+      { src: '/images/wedding/05-erster-tanz.jpg', alt: 'Erster Tanz auf Schloss Drachenburg', aspect: 'portrait' },
+      { src: '/images/wedding/13-couple-wald.jpg', alt: 'Paar in der Bonner Kirschblütenallee', aspect: 'landscape' },
+      { src: '/images/wedding/09-kerzenlicht.jpg', alt: 'Zeremonie mit Kerzenlicht', aspect: 'square' },
+    ],
   },
 
   'fotograf-leverkusen': {
-    hero: { src: U('photo-1515886657613-9f3515b0c78f', 1400), alt: 'Portrait im Japanischen Garten Leverkusen' },
-    gallery: pickGallery(PORTRAIT, (i) => [
-      'Portrait im Neulandpark Leverkusen',
-      'Paar im Japanischen Garten zur Kirschblüte',
-      'Business-Shooting am Schloss Morsbroich',
-      'Familienfoto in der Schlebuscher Altstadt',
-      'Editorial-Portrait an der Manforter Weide',
-      'LinkedIn-Portrait Bayer-Mitarbeiter',
-    ][i]),
+    hero: { src: '/images/cities/leverkusen.jpg', alt: 'Fotograf Leverkusen — Schloss Morsbroich im Nachmittagslicht' },
+    gallery: [
+      { src: '/images/portfolio/12-studio-portrait.jpg', alt: 'Portrait im Neulandpark Leverkusen', aspect: 'portrait' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Paar im Japanischen Garten zur Kirschblüte', aspect: 'landscape' },
+      { src: '/images/portfolio/07-bewerbungs-male.jpg', alt: 'Business-Shooting am Schloss Morsbroich', aspect: 'square' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familienfoto im Park Leverkusen', aspect: 'portrait' },
+      { src: '/images/portfolio/08-bewerbungs-female.jpg', alt: 'Editorial-Portrait mit Available Light', aspect: 'landscape' },
+      { src: '/images/portfolio/06-business-founder.jpg', alt: 'LinkedIn-Portrait Leverkusen', aspect: 'square' },
+    ],
   },
 
   'fotograf-siegburg': {
-    hero: { src: U('photo-1519741497674-611481863552', 1400), alt: 'Hochzeits-Portrait auf dem Michaelsberg Siegburg' },
-    gallery: pickGallery(WEDDING, (i) => [
-      'Hochzeits-Terrasse am Michaelsberg-Kloster',
-      'Paar-Portrait in der Siegburger Altstadt',
-      'Trauung in der Klosterkirche',
-      'Familien-Shoot am Sieg-Ufer',
-      'Brautpaar im Mischwald des Michaelsbergpfads',
-      'Ring-Detail vor Klosterfassade',
-    ][i]),
+    hero: { src: '/images/cities/siegburg.jpg', alt: 'Fotograf Siegburg — Michaelsberg Kloster bei Sonnenuntergang' },
+    gallery: [
+      { src: '/images/wedding/09-kerzenlicht.jpg', alt: 'Hochzeits-Zeremonie am Michaelsberg-Kloster', aspect: 'portrait' },
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Paar-Portrait in der Siegburger Altstadt', aspect: 'landscape' },
+      { src: '/images/wedding/10-kuss-kirche.jpg', alt: 'Trauung in der Klosterkirche', aspect: 'square' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familien-Shoot am Sieg-Ufer', aspect: 'portrait' },
+      { src: '/images/wedding/13-couple-wald.jpg', alt: 'Brautpaar im Michaelsbergpfad', aspect: 'landscape' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Ring-Detail Siegburg Hochzeit', aspect: 'square' },
+    ],
   },
 
   'fotograf-bergisch-gladbach': {
-    hero: { src: U('photo-1525258946800-98cfd641d0de', 1400), alt: 'Hochzeit auf der Schloss Bensberg Terrasse' },
-    gallery: pickGallery(WEDDING, (i) => [
-      'Gala-Hochzeit auf Schloss Bensberg',
-      'Fachwerk-Paar-Portrait in der Altstadt',
-      'Familienshooting am Strunder Bach',
-      'Brautpaar mit Rheinblick vom Schlosspark',
-      'Business-Portrait vor moderner Kulisse',
-      'Detailaufnahme Brautstrauß',
-    ][i]),
+    hero: { src: '/images/cities/bergisch-gladbach.jpg', alt: 'Fotograf Bergisch Gladbach — Schloss Bensberg Grandhotel' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Gala-Hochzeit auf Schloss Bensberg', aspect: 'portrait' },
+      { src: '/images/wedding/08-stehempfang.jpg', alt: 'Empfang im Schlosshof Bensberg', aspect: 'landscape' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familienshooting am Strunder Bach', aspect: 'square' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Brautpaar mit Rheinblick vom Schlosspark', aspect: 'portrait' },
+      { src: '/images/portfolio/07-bewerbungs-male.jpg', alt: 'Business-Portrait Bergisch Gladbach', aspect: 'landscape' },
+      { src: '/images/wedding/06-bouquet-close.jpg', alt: 'Brautstrauß-Detailaufnahme', aspect: 'square' },
+    ],
   },
 
   'fotograf-erftstadt': {
-    hero: { src: U('photo-1522673607200-164d1b6ce486', 1400), alt: 'Hochzeit vor Schloss Gracht in Erftstadt' },
-    gallery: pickGallery(MIXED, (i) => [
-      'Hochzeits-Portrait in der Kastanienallee Gracht',
-      'Paar an der Erft-Aue zur Golden Hour',
-      'Familienshooting im Herrig-Park',
-      'Trauung vor dem Wasserschloss Gracht',
-      'Fachwerk-Kulisse in Lechenich',
-      'Golden Hour am Gracht-Schlossgraben',
-    ][i]),
+    hero: { src: '/images/cities/erftstadt.jpg', alt: 'Fotograf Erftstadt — Schloss Gracht im Abendlicht' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Hochzeits-Portrait Kastanienallee Gracht', aspect: 'portrait' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Paar an der Erft-Aue zur Golden Hour', aspect: 'landscape' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familienshooting im Herrig-Park', aspect: 'square' },
+      { src: '/images/wedding/10-kuss-kirche.jpg', alt: 'Trauung vor dem Wasserschloss Gracht', aspect: 'portrait' },
+      { src: '/images/portfolio/04-editorial-couple.jpg', alt: 'Editorial-Paarportrait Erftstadt', aspect: 'landscape' },
+      { src: '/images/wedding/15-detail-tischdeko.jpg', alt: 'Tischdeko Schloss-Gracht-Hochzeit', aspect: 'square' },
+    ],
   },
 
   'fotograf-bergheim': {
-    hero: { src: U('photo-1529634597503-139d3726fed5', 1400), alt: 'Hochzeit vor Paffendorfer Schloss in Bergheim' },
-    gallery: pickGallery(MIXED, (i) => [
-      'Brautpaar im Paffendorfer Schlosspark',
-      'Familien-Shoot in der Aachener Altstadt',
-      'Portrait vor moderner Rhein-Erft-Architektur',
-      'Detailaufnahme Eheringe auf Parkstein',
-      'Gruppenbild vor Paffendorfer Schlossfassade',
-      'Golden Hour in Bergheim',
-    ][i]),
+    hero: { src: '/images/cities/bergheim.jpg', alt: 'Fotograf Bergheim — Paffendorfer Schloss im Abendlicht' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Brautpaar im Paffendorfer Schlosspark', aspect: 'portrait' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familien-Shoot in Bergheim', aspect: 'landscape' },
+      { src: '/images/portfolio/07-bewerbungs-male.jpg', alt: 'Portrait vor moderner Rhein-Erft-Architektur', aspect: 'square' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Ring-Detail Bergheim Hochzeit', aspect: 'portrait' },
+      { src: '/images/wedding/08-stehempfang.jpg', alt: 'Gruppenbild vor Paffendorfer Schlossfassade', aspect: 'landscape' },
+      { src: '/images/wedding/12-lichtspiel-schleier.jpg', alt: 'Braut im Schlosspark-Licht', aspect: 'square' },
+    ],
   },
 
   'fotograf-kerpen': {
-    hero: { src: U('photo-1464207687429-7505649dae38', 1400), alt: 'Hochzeits-Portrait auf Schloss Türnich' },
-    gallery: pickGallery(WEDDING, (i) => [
-      'Brautpaar auf Schloss Türnich',
-      'Editorial-Shoot auf dem Marienfeld',
-      'Familien-Shoot im Türnicher Demeter-Park',
-      'Paar-Portrait in Sindorf',
-      'Ring-Detail auf Schloss-Terrasse',
-      'Golden-Hour-Portrait in Kerpen',
-    ][i]),
+    hero: { src: '/images/cities/kerpen.jpg', alt: 'Fotograf Kerpen — Schloss Türnich mit Parkteich' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Brautpaar auf Schloss Türnich', aspect: 'portrait' },
+      { src: '/images/wedding/13-couple-wald.jpg', alt: 'Paar im Türnicher Demeter-Park', aspect: 'landscape' },
+      { src: '/images/family/03-papa-kind.jpg', alt: 'Familien-Shoot in Kerpen', aspect: 'square' },
+      { src: '/images/portfolio/04-editorial-couple.jpg', alt: 'Paar-Portrait im Abendlicht Kerpen', aspect: 'portrait' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Ring-Detail auf Schloss-Terrasse', aspect: 'landscape' },
+      { src: '/images/wedding/14-sparkler-exit.jpg', alt: 'Sparkler-Exit Schloss Türnich', aspect: 'square' },
+    ],
   },
 
   'fotograf-huerth': {
-    hero: { src: U('photo-1573496359142-b8d87734a5a2', 1400), alt: 'Portrait im Ville-Park Hürth' },
-    gallery: pickGallery(PORTRAIT, (i) => [
-      'Portrait im Ville-Park',
-      'Editorial-Shot vor Knapsack-Industriekulisse',
-      'Business-Portrait in Hermülheim',
-      'Paar-Portrait am Ville-See',
-      'Team-Shooting im Bavaria Studio',
-      'LinkedIn-Headshot Medien-Branche Hürth',
-    ][i]),
+    hero: { src: '/images/cities/huerth.jpg', alt: 'Fotograf Hürth — Ville-Park im goldenen Herbstlicht' },
+    gallery: [
+      { src: '/images/portfolio/12-studio-portrait.jpg', alt: 'Portrait im Ville-Park', aspect: 'portrait' },
+      { src: '/images/portfolio/06-business-founder.jpg', alt: 'Business-Portrait Hürth Medienstadt', aspect: 'landscape' },
+      { src: '/images/portfolio/08-bewerbungs-female.jpg', alt: 'LinkedIn-Headshot Hürth', aspect: 'square' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Paar-Portrait am Ville-See', aspect: 'portrait' },
+      { src: '/images/portfolio/07-bewerbungs-male.jpg', alt: 'Team-Shooting im Bavaria Studio', aspect: 'landscape' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familienfoto im Ville-Park Hürth', aspect: 'square' },
+    ],
   },
 
   'fotograf-bruehl': {
-    hero: { src: U('photo-1525258946800-98cfd641d0de', 1400), alt: 'Hochzeit in Schloss Augustusburg Brühl (UNESCO)' },
-    gallery: pickGallery(WEDDING, (i) => [
-      'Brautpaar auf der Schloss Augustusburg Treppe',
-      'Gruppenfoto vor Schloss Falkenlust',
-      'Portrait im englischen Schlosspark',
-      'Detail im Schloss-Saal Musikzimmer',
-      'Editorial-Shoot am Max-Ernst-Museum',
-      'Golden Hour im Schlosspark Brühl',
-    ][i]),
+    hero: { src: '/images/cities/bruehl.jpg', alt: 'Fotograf Brühl — Schloss Augustusburg UNESCO-Welterbe' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Brautpaar auf der Augustusburg Treppe', aspect: 'portrait' },
+      { src: '/images/wedding/08-stehempfang.jpg', alt: 'Hochzeitsempfang Schloss Falkenlust', aspect: 'landscape' },
+      { src: '/images/wedding/13-couple-wald.jpg', alt: 'Paarportrait im englischen Schlosspark', aspect: 'square' },
+      { src: '/images/wedding/15-detail-tischdeko.jpg', alt: 'Detail im Schloss-Saal', aspect: 'portrait' },
+      { src: '/images/portfolio/04-editorial-couple.jpg', alt: 'Editorial-Shoot am Max-Ernst-Museum', aspect: 'landscape' },
+      { src: '/images/wedding/14-sparkler-exit.jpg', alt: 'Golden Hour im Schlosspark Brühl', aspect: 'square' },
+    ],
   },
 
   'fotograf-pulheim': {
-    hero: { src: U('photo-1519741497674-611481863552', 1400), alt: 'Hochzeits-Portrait im Kreuzgang der Abtei Brauweiler' },
-    gallery: pickGallery(MIXED, (i) => [
-      'Brautpaar im Kreuzgang Brauweiler',
-      'Trauung in der Klosterbasilika',
-      'Familien-Shoot in Stommeln',
-      'Portrait vor romanischen Säulen',
-      'Paar in der Dansweiler Feldlandschaft',
-      'Ring-Detail auf Steinboden Brauweiler',
-    ][i]),
+    hero: { src: '/images/cities/pulheim.jpg', alt: 'Fotograf Pulheim — Abtei Brauweiler romanischer Kreuzgang' },
+    gallery: [
+      { src: '/images/wedding/09-kerzenlicht.jpg', alt: 'Brautpaar im Kreuzgang Brauweiler', aspect: 'portrait' },
+      { src: '/images/wedding/10-kuss-kirche.jpg', alt: 'Trauung in der Klosterbasilika', aspect: 'landscape' },
+      { src: '/images/family/06-siblings.jpg', alt: 'Familien-Shoot in Stommeln', aspect: 'square' },
+      { src: '/images/portfolio/12-studio-portrait.jpg', alt: 'Portrait vor romanischen Säulen', aspect: 'portrait' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Paar in der Dansweiler Feldlandschaft', aspect: 'landscape' },
+      { src: '/images/wedding/04-ringe-eukalyptus.jpg', alt: 'Ring-Detail auf Steinboden Brauweiler', aspect: 'square' },
+    ],
   },
 
   'fotograf-weilerswist': {
-    hero: { src: U('photo-1529634597503-139d3726fed5', 1400), alt: 'Familien-Shoot in der Weilerswister Erft-Aue' },
-    gallery: pickGallery(MIXED, (i) => [
-      'Hochzeitsportrait vor Burg Metternich',
-      'Familie in der Erft-Aue zur Golden Hour',
-      'Paar-Shooting im Weilerswister Feldweg',
-      'Stille Portraits im Ortskern St. Kunibert',
-      'Brautpaar auf Schloss Loersfeld',
-      'Babybauch-Shoot am Erft-Radweg',
-    ][i]),
+    hero: { src: '/images/cities/weilerswist.jpg', alt: 'Fotograf Weilerswist — Erft-Auen bei goldenem Abendlicht' },
+    gallery: [
+      { src: '/images/wedding/07-paar-schloss.jpg', alt: 'Hochzeitsportrait Burg Metternich Weilerswist', aspect: 'portrait' },
+      { src: '/images/family/01-outdoor.jpg', alt: 'Familie in der Erft-Aue zur Golden Hour', aspect: 'landscape' },
+      { src: '/images/wedding/01-paar-rheinaue.jpg', alt: 'Paar-Shooting Weilerswister Feldweg', aspect: 'square' },
+      { src: '/images/portfolio/12-studio-portrait.jpg', alt: 'Stille Portraits im Ortskern St. Kunibert', aspect: 'portrait' },
+      { src: '/images/wedding/13-couple-wald.jpg', alt: 'Brautpaar auf Schloss Loersfeld', aspect: 'landscape' },
+      { src: '/images/family/10-babybauch-outdoor.jpg', alt: 'Babybauch-Shoot am Erft-Radweg', aspect: 'square' },
+    ],
   },
 }

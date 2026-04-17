@@ -3,12 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'plus.unsplash.com' },
-      { protocol: 'https', hostname: 'randomuser.me' },
-      { protocol: 'https', hostname: 'cdn.cosmos.so' },
-    ],
+    // V3: Unsplash vollständig entfernt — alle Bilder lokal (/images/*).
+    // Build schlägt fehl wenn irgendwo noch eine Unsplash-URL referenziert wird → self-check.
+    remotePatterns: [],
   },
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react', 'react-icons'],
@@ -25,6 +22,11 @@ const nextConfig = {
       { source: '/work', destination: '/portfolio', permanent: true },
       { source: '/about', destination: '/ueber-uns', permanent: true },
       { source: '/contact', destination: '/kontakt', permanent: true },
+      // Blog slug renames (V3 Sistrix-keyword alignment) + safety-net for homepage journal links
+      { source: '/blog/was-kostet-hochzeitsfotograf-koeln-2026', destination: '/blog/hochzeitsfotograf-kosten-preise', permanent: true },
+      { source: '/blog/schoenste-hochzeitslocations-rhein-erft', destination: '/blog/hochzeitslocations-nrw-rheinland', permanent: true },
+      { source: '/blog/hochzeitslocations-rheinland', destination: '/blog/hochzeitslocations-nrw-rheinland', permanent: true },
+      { source: '/blog/outfit-bewerbungsshooting', destination: '/blog/bewerbungsfoto-checkliste', permanent: true },
     ]
   },
   async headers() {

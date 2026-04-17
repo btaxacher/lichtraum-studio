@@ -4,14 +4,13 @@ import { ArrowUpRight } from 'lucide-react'
 import { Breadcrumbs } from '@/components/sections/breadcrumbs'
 import { blogPosts } from '@/content/blog-posts'
 
-const U = (id: string, w = 1200) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`
-
-const CATEGORY_HERO: Record<string, string> = {
-  Hochzeit: 'photo-1606216794074-735e91aa2c92',
-  Locations: 'photo-1464207687429-7505649dae38',
-  Bewerbung: 'photo-1573496359142-b8d87734a5a2',
-  Guide: 'photo-1606800052052-a08af7148866',
+/** Fallback-Hero falls post.heroImage fehlt — nutzt bestehende Redesign-Pool. */
+const CATEGORY_FALLBACK: Record<string, string> = {
+  Hochzeit: '/images/redesign/hero-bride-golden-hour.jpg',
+  Locations: '/images/redesign/gallery-05-couple-field.jpg',
+  Bewerbung: '/images/redesign/gallery-06-business.jpg',
+  Ratgeber: '/images/redesign/gallery-03-bride.jpg',
+  Guide: '/images/redesign/studio-interior.jpg',
 }
 
 export function BlogIndexPage() {
@@ -44,7 +43,9 @@ export function BlogIndexPage() {
         <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {sorted.map((post, i) => {
-              const hero = CATEGORY_HERO[post.category] ?? 'photo-1606216794074-735e91aa2c92'
+              const heroSrc = post.heroImage
+                ?? CATEGORY_FALLBACK[post.category]
+                ?? '/images/redesign/hero-bride-golden-hour.jpg'
               return (
                 <Link
                   key={post.slug}
@@ -53,7 +54,7 @@ export function BlogIndexPage() {
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-bg-card shadow-card mb-5">
                     <Image
-                      src={U(hero, 1400)}
+                      src={heroSrc}
                       alt={post.title}
                       fill
                       loading={i < 2 ? 'eager' : 'lazy'}

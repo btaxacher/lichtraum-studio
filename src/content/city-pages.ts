@@ -34,7 +34,8 @@ export const cityPages: Record<string, CityPageContent> = {
       slug: 'fotograf-bonn',
       h1: 'Fotograf in Bonn — Hochzeit, Portrait, Business',
       title: 'Fotograf Bonn | Lichtraum — Hochzeiten, Bewerbungsfotos, Portraits',
-      description: 'Fotograf in Bonn und Umgebung: Hochzeiten im Poppelsdorfer Schloss, Bewerbungsfotos, Business-Portraits, Familien-Shoots. Basis in Euskirchen, ohne Anfahrts-Aufschlag bis Bonn.',
+      // V3 — getrimmt auf 155 Zeichen (vorher 176)
+      description: 'Fotograf Bonn: Hochzeiten am Poppelsdorfer Schloss, Bewerbungsfotos, Business-Portraits, Familien-Shoots. Aus Euskirchen — ohne Anfahrts-Aufschlag.',
       eyebrow: 'Fotografie · Bonn & Rhein-Sieg',
       city: 'Bonn',
       tier: 2,

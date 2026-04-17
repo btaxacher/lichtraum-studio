@@ -6,7 +6,7 @@ import { cityPageSlugs } from '@/content/city-pages'
 
 type SitemapEntry = MetadataRoute.Sitemap[number]
 
-const STATIC_SLUGS = ['portfolio', 'blog', 'impressum', 'datenschutz', 'hochzeitsfotograf-nrw'] as const
+const STATIC_SLUGS = ['portfolio', 'blog', 'impressum', 'datenschutz', 'hochzeitsfotograf-nrw', 'standorte'] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()

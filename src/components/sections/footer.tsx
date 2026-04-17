@@ -9,16 +9,17 @@ const iconMap = {
 } as const
 
 /**
- * Footer — Warm Editorial Light Redesign.
- * 3-Col Layout auf Desktop (Brand + Leistungen + Navigation), stacked Mobile.
+ * Footer — Warm Editorial Light.
+ * V3: 5-Col Layout (Brand + Leistungen + Städte + Journal + Über) auf Desktop.
+ * Tablet: Brand oben, dann 2x2 Grid. Mobile: vollständig gestapelt.
  */
 export function Footer() {
   return (
     <footer className="relative w-full bg-bg border-t border-border pt-16 md:pt-20 pb-10">
       <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12">
           {/* Brand Column */}
-          <div>
+          <div className="md:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex flex-col gap-1">
               <span
                 className="editorial-display text-fg leading-none"
@@ -52,7 +53,41 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Navigation Column */}
+          {/* Städte Column */}
+          <div>
+            <h3 className="eyebrow mb-4">{footerContent.citiesColumn.title}</h3>
+            <ul className="space-y-2.5">
+              {footerContent.citiesColumn.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-fg-muted hover:text-accent-terra transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Journal Column */}
+          <div>
+            <h3 className="eyebrow mb-4">{footerContent.journalColumn.title}</h3>
+            <ul className="space-y-2.5">
+              {footerContent.journalColumn.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-fg-muted hover:text-accent-terra transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Über Lichtraum Column */}
           <div>
             <h3 className="eyebrow mb-4">{footerContent.navColumn.title}</h3>
             <ul className="space-y-2.5">

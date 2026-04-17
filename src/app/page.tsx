@@ -8,6 +8,7 @@ import { PricingCards } from '@/components/sections/pricing-cards'
 import { JournalPreview } from '@/components/sections/journal-preview'
 import { StudioLocation } from '@/components/sections/studio-location'
 import { FaqAccordion } from '@/components/sections/faq-accordion'
+import { NearbyCities } from '@/components/sections/nearby-cities'
 import { ContactForm } from '@/components/sections/contact-form'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <JournalPreview />
       <StudioLocation />
       <FaqAccordion />
+      <NearbyCities />
       <ContactForm />
     </main>
   )

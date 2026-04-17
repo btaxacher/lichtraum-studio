@@ -14,7 +14,8 @@ export const nrwHubContent = {
   meta: {
     h1: 'Hochzeitsfotograf NRW — von Köln bis zur Eifel',
     title: 'Hochzeitsfotograf NRW | Lichtraum — Köln, Bonn, Euskirchen, Rheinland',
-    description: 'Hochzeitsfotograf für NRW und Rheinland: Köln, Bonn, Euskirchen, Rhein-Erft, Bergisches Land. Editorial-Reportagen ab 1.890 €. Regional aus Euskirchen, mobil im gesamten Rheinland.',
+    // V3 — getrimmt auf 155 Zeichen (vorher 180)
+    description: 'Hochzeitsfotograf NRW & Rheinland: Köln, Bonn, Eifel, Rhein-Erft, Bergisches Land. Editorial-Reportagen ab 1.790 €. Regional aus Euskirchen.',
     eyebrow: 'Hochzeitsreportage · Nordrhein-Westfalen',
   },
   intro: [

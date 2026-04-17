@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { testimonialsNew, testimonialsHeader, trustBadges } from '@/lib/content'
 import { TestimonialsMarquee } from '@/components/ui/testimonials-marquee'
+import { ReviewSchema } from '@/components/seo/ReviewSchema'
 
 const editorialEase = [0.22, 1, 0.36, 1] as const
 
@@ -78,6 +79,15 @@ export function ClientsSay() {
           ))}
         </div>
       </motion.div>
+
+      {/* Review JSON-LD — einzelne Review-Items für Rich Results */}
+      <ReviewSchema
+        reviews={testimonialsNew.map((t) => ({
+          author: t.name,
+          body: t.body,
+          ratingValue: 5,
+        }))}
+      />
     </section>
   )
 }

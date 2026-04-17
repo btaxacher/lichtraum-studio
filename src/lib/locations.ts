@@ -129,7 +129,8 @@ export const tier1Pages = [
   { slug: 'hochzeitsfotograf-koeln', targetVolume: 650,
     h1: 'Hochzeitsfotograf Köln — Ihre Hochzeit in Bildern',
     title: 'Hochzeitsfotograf Köln | Lichtraum Studio — Reportage & Editorial',
-    description: 'Hochzeitsfotograf Köln & NRW: emotionale Reportagen, ganztägige Begleitung, zeitloser Editorial-Stil. Kölner Dom, Schloss Augustusburg, Rhein-Terrassen. Termin anfragen.',
+    // V3 — getrimmt auf 155 Zeichen (vorher 170, wurde abgeschnitten)
+    description: 'Hochzeitsfotograf Köln & NRW: emotionale Reportagen im Editorial-Stil. Kölner Dom, Schloss Augustusburg, Rhein-Terrassen. Termin 2026/27 anfragen.',
     intro: 'Hochzeitsfotografie in Köln bedeutet für uns: keine Inszenierung, keine Standard-Posen — sondern die Fähigkeit, unsichtbar zu bleiben und genau dann auszulösen, wenn ein Moment entsteht, den niemand zweimal erlebt.' },
 
   { slug: 'bewerbungsfotos-koeln', targetVolume: 550,

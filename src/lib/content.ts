@@ -20,8 +20,9 @@ export const brand = {
 
 export const seo = {
   title: 'Fotograf Euskirchen | Lichtraum Studio – Hochzeit, Portrait, Business',
+  // Gekürzt auf 152 Zeichen (V3 Meta-Desc-Fix, vorher 180 — wurde von Google abgeschnitten)
   description:
-    'Lichtraum Fotostudio — Fotograf in Euskirchen für Hochzeiten, Bewerbungsfotos und Portraits in Köln, Bonn & NRW. Ehrlich fotografiert, warm erzählt. Termine 2026/27 jetzt anfragen.',
+    'Lichtraum Fotostudio — Fotograf in Euskirchen für Hochzeiten, Bewerbungsfotos & Portraits in Köln, Bonn & NRW. Termine 2026/27 jetzt anfragen.',
   keywords: [
     'Fotograf Euskirchen',
     'Fotostudio Euskirchen',
@@ -86,7 +87,11 @@ const WARM_UNSPLASH = {
 export const heroContent = {
   kicker: 'EUSKIRCHEN · KÖLN · BONN · RHEINLAND',
   script: 'Schön, dass du da bist.',
-  h1: ['Fotograf Euskirchen', 'für Köln, Bonn & das Rheinland'], // SEO-critical, unverändert
+  // SEO-critical — array-split in zwei <span className="block"> im Hero-Component.
+  // \u00A0 am Ende von h1[0] als defensive Absicherung gegen Whitespace-Trim-Bugs
+  // bei manchen Rendering-Kontexten (Mobile-Wrapping/CSS-Resets). Kein SEO-Impact,
+  // da Google Whitespace in H1 normalisiert.
+  h1: ['Fotograf Euskirchen\u00A0', 'für Köln, Bonn & das Rheinland'],
   body:
     'Hochzeiten, Bewerbungsfotos, Portraits und Familienmomente. Ohne Posen-Regie, ohne Eile — wir nehmen uns Zeit, bis das Bild von allein passiert. Termine für 2026 und 2027 jetzt anfragen.',
   primaryCta: { label: 'Termin anfragen', href: '#contact' },
@@ -134,7 +139,7 @@ export const servicesGrid = [
     alt: 'Brautpaar umarmt sich im warmen Nachmittagslicht',
   },
   {
-    eyebrow: 'AB 129 €',
+    eyebrow: 'AB 89 €',
     title: 'Bewerbung & Business',
     subtitle: 'Bewerbungsfotos, LinkedIn-Headshots, Personal Branding — Studio Euskirchen',
     href: '/bewerbungsfotos-koeln',
@@ -317,7 +322,7 @@ export const pricingHeader = {
 
 export const pricingCards = [
   {
-    price: 'ab 129 €',
+    price: 'ab 89 €',
     title: 'Bewerbung · LinkedIn · Branding',
     category: 'Portrait & Business',
     features: [
@@ -379,28 +384,28 @@ export const journalHeader = {
 
 export const journalCards = [
   {
-    category: 'LOCATIONS',
-    title: 'Die 7 schönsten Hochzeitslocations im Rheinland',
-    readTime: '8 Min. Lesezeit',
-    href: '/blog/hochzeitslocations-rheinland',
+    category: 'KOSTEN',
+    title: 'Was kostet ein Hochzeitsfotograf 2026? Der Transparenz-Guide',
+    readTime: '12 Min. Lesezeit',
+    href: '/blog/hochzeitsfotograf-kosten-preise',
     image: IMG('/images/redesign/blog-01-locations.jpg', U(WARM_UNSPLASH.blog01, 1400)),
-    alt: 'Schöne Hochzeitslocation im Rheinland bei goldenem Abendlicht',
+    alt: 'Hochzeitspaar vor historischer Kulisse im Rheinland bei goldenem Abendlicht',
   },
   {
-    category: 'GUIDE',
-    title: 'Das perfekte Outfit für dein Bewerbungsshooting',
-    readTime: '5 Min. Lesezeit',
-    href: '/blog/outfit-bewerbungsshooting',
+    category: 'LOCATIONS',
+    title: 'Die 15 schönsten Hochzeitslocations in NRW & im Rheinland',
+    readTime: '14 Min. Lesezeit',
+    href: '/blog/hochzeitslocations-nrw-rheinland',
     image: IMG('/images/redesign/blog-02-outfit.jpg', U(WARM_UNSPLASH.blog02, 1400)),
-    alt: 'Flat-Lay eines professionellen Bewerbungs-Outfits auf Leinen',
+    alt: 'Romantische Hochzeitslocation in NRW mit Sonnenuntergang',
   },
   {
     category: 'HOCHZEIT',
-    title: 'Getting-Ready: So läuft der Morgen eurer Hochzeit',
-    readTime: '6 Min. Lesezeit',
+    title: 'Getting Ready: So wird der Morgen eurer Hochzeit zur schönsten Zeit',
+    readTime: '8 Min. Lesezeit',
     href: '/blog/getting-ready-hochzeit',
     image: IMG('/images/redesign/blog-03-preparation.jpg', U(WARM_UNSPLASH.blog03, 1400)),
-    alt: 'Braut beim Getting-Ready im sanften Morgenlicht',
+    alt: 'Braut beim Getting Ready im sanften Morgenlicht eines Hochzeitsmorgens',
   },
 ] as const
 
@@ -452,7 +457,7 @@ export const faqs = [
   },
   {
     q: 'Was kosten Bewerbungsfotos bei euch?',
-    a: 'Unser Standard-Paket für Bewerbungsfotos in Euskirchen startet bei 129 € — inklusive 30 Minuten Studio-Shooting, 5 bearbeiteten Bildern und Express-Lieferung in 48 Stunden. Für LinkedIn-Headshots oder Personal-Branding-Serien gibt es erweiterte Pakete ab 249 €.',
+    a: 'Unser Standard-Paket für Bewerbungsfotos in Euskirchen startet bei 89 € — inklusive 30 Minuten Studio-Shooting, 5 bearbeiteten Bildern und Express-Lieferung in 48 Stunden. Für LinkedIn-Headshots oder Personal-Branding-Serien gibt es erweiterte Pakete ab 229 €.',
   },
   {
     q: 'Kommt ihr auch nach Köln, Bonn oder Düsseldorf?',
@@ -503,25 +508,49 @@ export const footerContent = {
   brandName: 'Lichtraum',
   brandSub: 'Fotostudio',
   tagline: 'Fotostudio in Euskirchen.\nHochzeiten, Portraits und Bewerbungsfotos\nzwischen Köln, Bonn und dem Rheinland.',
+  // V3 — 4-Spalten-Struktur: Leistungen / Städte / Journal / Über
   servicesColumn: {
     title: 'Leistungen',
     links: [
-      { label: 'Hochzeit Köln', href: '/hochzeitsfotograf-koeln' },
-      { label: 'Hochzeit Euskirchen', href: '/hochzeitsfotograf-euskirchen' },
+      { label: 'Hochzeitsfotograf Köln', href: '/hochzeitsfotograf-koeln' },
+      { label: 'Hochzeitsfotograf Euskirchen', href: '/hochzeitsfotograf-euskirchen' },
+      { label: 'Hochzeitsfotograf Bonn', href: '/hochzeitsfotograf-bonn' },
+      { label: 'Hochzeitsfotograf NRW', href: '/hochzeitsfotograf-nrw' },
       { label: 'Bewerbungsfotos Köln', href: '/bewerbungsfotos-koeln' },
       { label: 'Bewerbungsfotos Euskirchen', href: '/bewerbungsfotos-euskirchen' },
+      { label: 'Businessfotograf Köln', href: '/businessfotograf-koeln' },
       { label: 'Fotoshooting Köln', href: '/fotoshooting-koeln' },
+      { label: 'Schwangerschaftsfotos Köln', href: '/schwangerschaftsfotos-koeln' },
+    ],
+  },
+  citiesColumn: {
+    title: 'Städte',
+    links: [
       { label: 'Fotograf Köln', href: '/fotograf-koeln' },
-      { label: 'Babybauch Köln', href: '/schwangerschaftsfotos-koeln' },
-      { label: 'Business Köln', href: '/businessfotograf-koeln' },
-      { label: 'Portfolio', href: '/portfolio' },
+      { label: 'Fotograf Bonn', href: '/fotograf-bonn' },
+      { label: 'Fotograf Leverkusen', href: '/fotograf-leverkusen' },
+      { label: 'Fotograf Weilerswist', href: '/fotograf-weilerswist' },
+      { label: 'Fotograf Siegburg', href: '/fotograf-siegburg' },
+      { label: 'Fotograf Bergisch Gladbach', href: '/fotograf-bergisch-gladbach' },
+      { label: 'Fotograf Erftstadt', href: '/fotograf-erftstadt' },
+      { label: 'Fotograf Kerpen', href: '/fotograf-kerpen' },
+      { label: 'Alle Städte ansehen →', href: '/standorte' },
+    ],
+  },
+  journalColumn: {
+    title: 'Journal',
+    links: [
+      { label: 'Hochzeitsfotograf Kosten 2026', href: '/blog/hochzeitsfotograf-kosten-preise' },
+      { label: 'Hochzeitslocations NRW', href: '/blog/hochzeitslocations-nrw-rheinland' },
+      { label: 'Bewerbungsfoto Checkliste', href: '/blog/bewerbungsfoto-checkliste' },
+      { label: 'Getting Ready Hochzeit', href: '/blog/getting-ready-hochzeit' },
+      { label: 'Fotograf finden in NRW', href: '/blog/fotograf-finden-nrw-anleitung' },
     ],
   },
   navColumn: {
-    title: 'Navigation',
+    title: 'Über Lichtraum',
     links: [
-      { label: 'Studio', href: '#studio' },
-      { label: 'Journal', href: '/blog' },
+      { label: 'Portfolio', href: '/portfolio' },
       { label: 'Preise', href: '#pricing' },
       { label: 'Kontakt', href: '#contact' },
       { label: 'Impressum', href: '/impressum' },

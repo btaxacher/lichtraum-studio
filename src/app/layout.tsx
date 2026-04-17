@@ -7,6 +7,7 @@ import { Nav } from '@/components/sections/nav'
 import { Footer } from '@/components/sections/footer'
 import { seo, brand } from '@/lib/content'
 import { SITE_URL } from '@/lib/site-url'
+import { WebSiteSchema } from '@/components/seo/WebSiteSchema'
 
 const display = Cormorant_Garamond({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     siteName: brand.studio,
+    url: SITE_URL,
     images: [{ url: '/og.jpg', width: 1200, height: 630, alt: brand.studio }],
   },
   twitter: {
@@ -65,6 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </LenisProvider>
         <Analytics />
+        {/* WebSite schema — gilt für alle Routes, wird von Google für Site-Links genutzt */}
+        <WebSiteSchema />
         {/* Root LocalBusiness + ProfessionalService + Photographer — gilt für alle Sub-Pages via @id */}
         <script
           type="application/ld+json"
