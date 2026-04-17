@@ -59,10 +59,10 @@ export const blogPosts: BlogPost[] = [
     keyword: 'Hochzeitsfotograf Kosten Preise',
     heroImage: '/images/blog/hochzeitsfotograf-kosten-hero.jpg',
     bodyImages: [
-      '/images/blog/hochzeitsfotograf-kosten-01-paar-abendlicht.jpg',
-      '/images/blog/hochzeitsfotograf-kosten-02-ringe-detail.jpg',
-      '/images/blog/hochzeitsfotograf-kosten-03-reportage.jpg',
-      '/images/blog/hochzeitsfotograf-kosten-04-erste-tanz.jpg',
+      '/images/wedding/01-paar-rheinaue.jpg',
+      '/images/wedding/04-ringe-eukalyptus.jpg',
+      '/images/wedding/08-stehempfang.jpg',
+      '/images/wedding/05-erster-tanz.jpg',
     ],
     relatedLinks: [
       { href: '/blog/hochzeitslocations-nrw-rheinland', label: 'Die 15 schönsten Hochzeitslocations in NRW & im Rheinland' },
@@ -409,12 +409,12 @@ export const blogPosts: BlogPost[] = [
     heroImage: '/images/blog/bewerbungsfoto-hero.jpg',
     schemaType: 'HowTo',
     bodyImages: [
-      '/images/blog/bewerbungsfoto-outfit-banking.jpg',
-      '/images/blog/bewerbungsfoto-outfit-it-tech.jpg',
-      '/images/blog/bewerbungsfoto-outfit-medien.jpg',
-      '/images/blog/bewerbungsfoto-outfit-medizin.jpg',
-      '/images/blog/bewerbungsfoto-outfit-handwerk.jpg',
-      '/images/blog/bewerbungsfoto-checkliste-shooting-tag.jpg',
+      '/images/jobs/portrait-02.jpg',
+      '/images/jobs/portrait-04.jpg',
+      '/images/portfolio/06-business-founder.jpg',
+      '/images/jobs/portrait-05.jpg',
+      '/images/jobs/portrait-07.jpg',
+      '/images/portfolio/08-bewerbungs-female.jpg',
     ],
     relatedLinks: [
       { href: '/bewerbungsfotos-koeln', label: 'Bewerbungsfotos Köln' },
@@ -574,9 +574,9 @@ export const blogPosts: BlogPost[] = [
     keyword: 'Fotograf finden NRW',
     heroImage: '/images/blog/fotograf-finden-nrw-hero.jpg',
     bodyImages: [
-      '/images/blog/fotograf-finden-nrw-portfolio-check.jpg',
-      '/images/blog/fotograf-finden-nrw-beratungsgespraech.jpg',
-      '/images/blog/fotograf-finden-nrw-nahe-suche.jpg',
+      '/images/portfolio/03-first-look.jpg',
+      '/images/portfolio/12-studio-portrait.jpg',
+      '/images/cities/nrw-rheinland.jpg',
     ],
     relatedLinks: [
       { href: '/fotograf-koeln', label: 'Fotograf Köln' },
@@ -661,11 +661,11 @@ export const blogPosts: BlogPost[] = [
     keyword: 'Getting Ready Hochzeit',
     heroImage: '/images/blog/getting-ready-hero.jpg',
     bodyImages: [
-      '/images/blog/getting-ready-kleid-am-buegel.jpg',
-      '/images/blog/getting-ready-make-up.jpg',
-      '/images/blog/getting-ready-brief.jpg',
-      '/images/blog/getting-ready-schuhe.jpg',
-      '/images/blog/getting-ready-spiegel.jpg',
+      '/images/wedding/03-getting-ready.jpg',
+      '/images/wedding/12-lichtspiel-schleier.jpg',
+      '/images/wedding/06-bouquet-close.jpg',
+      '/images/wedding/15-detail-tischdeko.jpg',
+      '/images/portfolio/02-silent-moment.jpg',
     ],
     relatedLinks: [
       { href: '/blog/hochzeitsfotograf-kosten-preise', label: 'Hochzeitsfotograf Kosten & Preise 2026' },
