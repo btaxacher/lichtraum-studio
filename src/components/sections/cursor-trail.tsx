@@ -60,7 +60,7 @@ export function CursorTrail() {
           <span
             className="block script-heading text-4xl md:text-5xl lg:text-[4.5rem] mb-3 md:mb-5"
           >
-            Momente,
+            Momente,{' '}
           </span>
           <span
             className="block editorial-display"

@@ -40,48 +40,6 @@ export const seo = {
 } as const
 
 // ================================================================
-// IMAGE STRATEGY
-// ================================================================
-// - Primary: /images/redesign/* (Nanobanana, warm Kodak Portra 400)
-// - Fallback: Unsplash URLs mit warm-light IDs (bis Nanobanana ausgeführt)
-// Nach Nanobanana-Run: USE_LOCAL = true flippen.
-const USE_LOCAL = true
-
-const IMG = (local: string, remote: string) => (USE_LOCAL ? local : remote)
-
-const U = (id: string, w = 1400) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`
-
-// Warm-Light Unsplash IDs — cohärente Portra 400 Palette
-const WARM_UNSPLASH = {
-  heroBride: 'photo-1606216794074-735e91aa2c92',        // Braut Golden Hour
-  studioDetail: 'photo-1606800052052-a08af7148866',     // Detail shot
-  serviceHochzeit: 'photo-1522673607200-164d1b6ce486',  // Wedding couple
-  serviceBusiness: 'photo-1573496359142-b8d87734a5a2',  // Business portrait
-  serviceFamilie: 'photo-1511895426328-dc8714191300',   // Family
-  serviceBabybauch: 'photo-1555252333-9f8e92e65df9',    // Maternity
-  gallery01: 'photo-1606216794074-735e91aa2c92',
-  gallery02: 'photo-1519741497674-611481863552',
-  gallery03: 'photo-1525258946800-98cfd641d0de',
-  gallery04: 'photo-1511895426328-dc8714191300',
-  gallery05: 'photo-1529634597503-139d3726fed5',
-  gallery06: 'photo-1573496359142-b8d87734a5a2',
-  gallery07: 'photo-1555252333-9f8e92e65df9',
-  gallery08: 'photo-1519225421980-715cb0215aed',
-  gallery09: 'photo-1464207687429-7505649dae38',
-  avatarEmilia: 'photo-1494790108377-be9c29b29330', // Braun, Lächeln
-  avatarSofia: 'photo-1580489944761-15a19d654956',  // Frau Natural Light
-  avatarMarie: 'photo-1438761681033-6461ffad8d80',  // Porträt warm
-  avatarCharlotte: 'photo-1544005313-94ddf0286df2', // Zusätzlich: Charlotte
-  avatarElena: 'photo-1534528741775-53994a69daeb',  // Zusätzlich: Elena
-  avatarHelena: 'photo-1531746020798-e6953c6e8e04', // Zusätzlich: Helena
-  blog01: 'photo-1519741497674-611481863552',
-  blog02: 'photo-1551836022-aadb801c60ae',           // Business woman, rausgezoomt, warm
-  blog03: 'photo-1606800052052-a08af7148866',
-  studioInterior: 'photo-1617103996702-96ff29b1c467',
-}
-
-// ================================================================
 // HERO — Single image, no slider
 // ================================================================
 export const heroContent = {
@@ -102,7 +60,7 @@ export const heroContent = {
     'Über 120 Hochzeiten begleitet',
   ],
   image: {
-    src: IMG('/images/redesign/hero-bride-golden-hour.jpg', U(WARM_UNSPLASH.heroBride, 1600)),
+    src: '/images/redesign/hero-bride-golden-hour.jpg',
     alt: 'Braut im Weizenfeld bei Golden Hour im Rheinland',
   },
 } as const
@@ -121,8 +79,8 @@ export const introContent = {
   signature: '— Vanessa & Team',
   link: { label: 'Unsere Geschichte lesen', href: '/ueber-uns' },
   image: {
-    src: IMG('/images/redesign/studio-detail-hands.jpg', U(WARM_UNSPLASH.studioDetail, 1200)),
-    alt: 'Detailaufnahme: Hände halten Hasselblad-Kamera im warmen Studiolicht',
+    src: '/images/redesign/studio-detail-hands-v2.jpg',
+    alt: 'Fotografen-Arbeitsplatz: Hasselblad-Kamera, Filmnegative und Notizbuch auf Holztisch im warmen Fensterlicht',
   },
 } as const
 
@@ -135,7 +93,7 @@ export const servicesGrid = [
     title: 'Hochzeit',
     subtitle: 'Ganztagsbegleitung in Euskirchen, Köln, Bonn & Rheinland',
     href: '/hochzeitsfotograf-koeln',
-    image: IMG('/images/redesign/service-hochzeit.jpg', U(WARM_UNSPLASH.serviceHochzeit, 1200)),
+    image: '/images/redesign/service-hochzeit.jpg',
     alt: 'Brautpaar umarmt sich im warmen Nachmittagslicht',
   },
   {
@@ -143,7 +101,7 @@ export const servicesGrid = [
     title: 'Bewerbung & Business',
     subtitle: 'Bewerbungsfotos, LinkedIn-Headshots, Personal Branding — Studio Euskirchen',
     href: '/bewerbungsfotos-koeln',
-    image: IMG('/images/redesign/service-business.jpg', U(WARM_UNSPLASH.serviceBusiness, 1200)),
+    image: '/images/redesign/service-business.jpg',
     alt: 'Professionelle Frau im cremefarbenen Blazer in editorialem Portraitlicht',
   },
   {
@@ -151,7 +109,7 @@ export const servicesGrid = [
     title: 'Familien',
     subtitle: 'Draußen oder im Studio — für alle, die lachend nach Hause gehen',
     href: '/fotoshooting-koeln',
-    image: IMG('/images/redesign/service-familie.jpg', U(WARM_UNSPLASH.serviceFamilie, 1200)),
+    image: '/images/redesign/service-familie.jpg',
     alt: 'Junge Familie läuft Hand in Hand durch ein sonnenverwöhntes Weizenfeld',
   },
   {
@@ -159,7 +117,7 @@ export const servicesGrid = [
     title: 'Babybauch',
     subtitle: 'Schwangerschafts- und Newborn-Shootings im Studio Euskirchen',
     href: '/schwangerschaftsfotos-koeln',
-    image: IMG('/images/redesign/service-babybauch.jpg', U(WARM_UNSPLASH.serviceBabybauch, 1200)),
+    image: '/images/redesign/service-babybauch.jpg',
     alt: 'Schwangere Frau im fließenden Seidenkleid vor warmer Studiowand',
   },
 ] as const
@@ -177,63 +135,63 @@ export const servicesGridHeader = {
 // ================================================================
 export const galleryItems = [
   {
-    src: IMG('/images/redesign/gallery-01-kiss.jpg', U(WARM_UNSPLASH.gallery01, 1600)),
+    src: '/images/redesign/gallery-01-kiss.jpg',
     alt: 'Erster Kuss eines Hochzeitspaars im goldenen Nachmittagslicht',
     span: 'col-span-2 row-span-2', // groß
     width: 1600,
     height: 2000,
   },
   {
-    src: IMG('/images/redesign/gallery-02-rings.jpg', U(WARM_UNSPLASH.gallery02, 1200)),
+    src: '/images/redesign/gallery-02-rings.jpg',
     alt: 'Detailaufnahme goldene Eheringe auf Leinen mit Eukalyptus',
     span: 'col-span-1 row-span-1',
     width: 1200,
     height: 1200,
   },
   {
-    src: IMG('/images/redesign/gallery-03-bride.jpg', U(WARM_UNSPLASH.gallery03, 1200)),
+    src: '/images/redesign/gallery-03-bride.jpg',
     alt: 'Braut im Profil blickt aus einem sonnenlichtdurchfluteten Fenster',
     span: 'col-span-1 row-span-2',
     width: 1200,
     height: 1600,
   },
   {
-    src: IMG('/images/redesign/gallery-04-family.jpg', U(WARM_UNSPLASH.gallery04, 1200)),
+    src: '/images/redesign/gallery-04-family.jpg',
     alt: 'Elternteil hebt Kleinkind lachend in die Luft',
     span: 'col-span-1 row-span-1',
     width: 1200,
     height: 1200,
   },
   {
-    src: IMG('/images/redesign/gallery-05-couple-field.jpg', U(WARM_UNSPLASH.gallery05, 1800)),
+    src: '/images/redesign/gallery-05-couple-field.jpg',
     alt: 'Paar läuft Hand in Hand durch ein Weizenfeld zur goldenen Stunde',
     span: 'col-span-2 row-span-1',
     width: 1800,
     height: 1200,
   },
   {
-    src: IMG('/images/redesign/gallery-06-business.jpg', U(WARM_UNSPLASH.gallery06, 1200)),
+    src: '/images/redesign/gallery-06-business.jpg',
     alt: 'Mann im cremefarbenen Strickpullover im warmen Studiolicht',
     span: 'col-span-1 row-span-1',
     width: 1200,
     height: 1200,
   },
   {
-    src: IMG('/images/redesign/gallery-07-maternity.jpg', U(WARM_UNSPLASH.gallery07, 1200)),
+    src: '/images/redesign/gallery-07-maternity.jpg',
     alt: 'Silhouette einer schwangeren Frau vor einem sanft beleuchteten Fenster',
     span: 'col-span-1 row-span-2',
     width: 1200,
     height: 1600,
   },
   {
-    src: IMG('/images/redesign/gallery-08-flowers.jpg', U(WARM_UNSPLASH.gallery08, 1200)),
+    src: '/images/redesign/gallery-08-flowers.jpg',
     alt: 'Brautstrauß aus cremefarbenen Pfingstrosen, Eukalyptus und Weizen',
     span: 'col-span-1 row-span-1',
     width: 1200,
     height: 1200,
   },
   {
-    src: IMG('/images/redesign/gallery-09-firstdance.jpg', U(WARM_UNSPLASH.gallery09, 1800)),
+    src: '/images/redesign/gallery-09-firstdance.jpg',
     alt: 'Erster Tanz in einer sanft beleuchteten Scheune mit Bistro-Lichtern',
     span: 'col-span-2 row-span-1',
     width: 1800,
@@ -257,42 +215,42 @@ export const testimonialsNew = [
       'Wir wollten keine gestellte Hochzeit auf Fotos — sondern uns. Lichtraum hat genau das geschafft. Jedes Bild fühlt sich an wie eine Erinnerung, die gerade entsteht.',
     name: 'Emilia & Jonas',
     meta: 'Hochzeit · Burg Satzvey · 2025',
-    avatar: IMG('/images/redesign/avatar-emilia.jpg', U(WARM_UNSPLASH.avatarEmilia, 400)),
+    avatar: '/images/redesign/avatar-emilia.jpg',
   },
   {
     body:
       'Ich hatte furchtbare Angst vor dem Shooting — Bewerbungsfotos haben sich für mich nie gut angefühlt. Bei Lichtraum saß ich zehn Minuten später mit einem Kaffee in der Hand und hab gelacht. Die Fotos haben mir meinen Job besorgt.',
     name: 'Sofia Reichmann',
     meta: 'Bewerbungsshooting · Euskirchen · 2025',
-    avatar: IMG('/images/redesign/avatar-sofia.jpg', U(WARM_UNSPLASH.avatarSofia, 400)),
+    avatar: '/images/redesign/avatar-sofia.jpg',
   },
   {
     body:
       'Unsere Zwillinge waren gerade zwei Monate alt — und ich hatte keine Energie für ein gestelltes Shooting. Lichtraum kam zu uns nach Hause, hat drei Stunden einfach mitgelebt und uns dabei fotografiert. Es sind die schönsten Bilder, die wir von unserer Familie haben.',
     name: 'Marie & Finn',
     meta: 'Familienshooting · Köln · 2026',
-    avatar: IMG('/images/redesign/avatar-marie.jpg', U(WARM_UNSPLASH.avatarMarie, 400)),
+    avatar: '/images/redesign/avatar-marie.jpg',
   },
   {
     body:
       'Diskret, aufmerksam, präsent — ohne je im Weg zu sein. Die Bilder sind kein Rückblick, sie sind ein Gefühl.',
     name: 'Charlotte & Mika',
     meta: 'Engagement · Bonn · 2025',
-    avatar: IMG('/images/redesign/avatar-charlotte.jpg', U(WARM_UNSPLASH.avatarCharlotte, 400)),
+    avatar: '/images/redesign/avatar-charlotte.jpg',
   },
   {
     body:
       'Die Zusammenarbeit war ein Gespräch, kein Shooting. Das sieht man in jedem einzelnen Bild.',
     name: 'Elena Vogt',
     meta: 'Portraits im Studio · 2025',
-    avatar: IMG('/images/redesign/avatar-elena.jpg', U(WARM_UNSPLASH.avatarElena, 400)),
+    avatar: '/images/redesign/avatar-elena.jpg',
   },
   {
     body:
       'So viel Ruhe, so viel Raum. Ich habe mich selten so gesehen gefühlt wie an diesem Nachmittag.',
     name: 'Helena Kraus',
     meta: 'Schwangerschaftsshooting · Euskirchen · 2025',
-    avatar: IMG('/images/redesign/avatar-helena.jpg', U(WARM_UNSPLASH.avatarHelena, 400)),
+    avatar: '/images/redesign/avatar-helena.jpg',
   },
 ] as const
 
@@ -388,7 +346,7 @@ export const journalCards = [
     title: 'Was kostet ein Hochzeitsfotograf 2026? Der Transparenz-Guide',
     readTime: '12 Min. Lesezeit',
     href: '/blog/hochzeitsfotograf-kosten-preise',
-    image: IMG('/images/redesign/blog-01-locations.jpg', U(WARM_UNSPLASH.blog01, 1400)),
+    image: '/images/redesign/blog-01-locations.jpg',
     alt: 'Hochzeitspaar vor historischer Kulisse im Rheinland bei goldenem Abendlicht',
   },
   {
@@ -396,7 +354,7 @@ export const journalCards = [
     title: 'Die 15 schönsten Hochzeitslocations in NRW & im Rheinland',
     readTime: '14 Min. Lesezeit',
     href: '/blog/hochzeitslocations-nrw-rheinland',
-    image: IMG('/images/redesign/blog-02-outfit.jpg', U(WARM_UNSPLASH.blog02, 1400)),
+    image: '/images/redesign/blog-02-outfit.jpg',
     alt: 'Romantische Hochzeitslocation in NRW mit Sonnenuntergang',
   },
   {
@@ -404,7 +362,7 @@ export const journalCards = [
     title: 'Getting Ready: So wird der Morgen eurer Hochzeit zur schönsten Zeit',
     readTime: '8 Min. Lesezeit',
     href: '/blog/getting-ready-hochzeit',
-    image: IMG('/images/redesign/blog-03-preparation.jpg', U(WARM_UNSPLASH.blog03, 1400)),
+    image: '/images/redesign/blog-03-preparation.jpg',
     alt: 'Braut beim Getting Ready im sanften Morgenlicht eines Hochzeitsmorgens',
   },
 ] as const
@@ -437,7 +395,7 @@ export const studioContent = {
   ],
   mapsCta: { label: 'Google Maps öffnen', href: brand.mapsUrl },
   image: {
-    src: IMG('/images/redesign/studio-interior.jpg', U(WARM_UNSPLASH.studioInterior, 1400)),
+    src: '/images/redesign/studio-interior.jpg',
     alt: 'Warmes Fotostudio-Interieur mit Holzboden, Leinwand-Hintergrund und Hasselblad-Kamera',
   },
 } as const
@@ -553,11 +511,9 @@ export const footerContent = {
       { label: 'Portfolio', href: '/portfolio' },
       { label: 'Preise', href: '/#pricing' },
       { label: 'Kontakt', href: '/#contact' },
-      { label: 'Impressum', href: '/impressum' },
-      { label: 'Datenschutz', href: '/datenschutz' },
     ],
   },
-  copyright: '© 2026 Lichtraum Fotostudio · Inhaberin: Vanessa T. · Weilerswist',
+  copyright: '© 2026 Lichtraum Fotostudio · Weilerswist',
   social: [
     { icon: 'Instagram', href: 'https://instagram.com/lichtraum.studio', label: 'Instagram' },
     { icon: 'Pinterest', href: 'https://pinterest.com/lichtraum.studio', label: 'Pinterest' },
@@ -573,7 +529,7 @@ export const hero = {
   slides: [
     {
       text: ['ZWISCHEN LICHT', 'UND SCHATTEN'],
-      img: IMG('/images/hero/hero-01.jpg', U('photo-1519741497674-611481863552', 2400)),
+      img: '/images/hero/hero-01.jpg',
       alt: 'Braut im Spitzenkleid bei natürlichem Licht',
       position: 'center 30%',
     },
@@ -598,8 +554,7 @@ export const parallaxImages = galleryItems.slice(0, 7).map((g) => ({
   alt: g.alt,
 })) as readonly { src: string; alt: string }[]
 
-const AVATAR = (i: number) =>
-  IMG(`/images/avatars/a${i}.jpg`, U(WARM_UNSPLASH.avatarEmilia, 400))
+const AVATAR = (i: number) => `/images/avatars/a${i}.jpg`
 
 export const masonryCards = testimonialsNew.slice(0, 6).map((t, i) => ({
   profileImage: t.avatar,

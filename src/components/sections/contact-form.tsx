@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Loader2,
 } from 'lucide-react'
-import { brand, contactContent } from '@/lib/content'
+import { contactContent } from '@/lib/content'
 
 const editorialEase = [0.22, 1, 0.36, 1] as const
 
@@ -50,15 +50,13 @@ const initial: FormState = {
 
 /**
  * ContactForm — echtes Formular mit 8 Feldern.
- * Backend: Web3Forms (wenn NEXT_PUBLIC_WEB3FORMS_KEY gesetzt), sonst mailto-Fallback.
- * Ziel-Email: info@kandivo.de (konfiguriert im Web3Forms-Dashboard).
+ * Backend: Resend via /api/contact (server-side).
+ * Ziel-Email: kontakt@lichtraum-euskirchen.de.
  */
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initial)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState<string>('')
-
-  const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -72,37 +70,22 @@ export function ContactForm() {
       return
     }
 
-    // Fallback: mailto wenn kein Web3Forms-Key
-    if (!web3formsKey) {
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nE-Mail: ${form.email}\nTelefon: ${form.phone}\nArt: ${form.shootingType}\nTermin: ${form.date}\nOrt: ${form.location}\n\n${form.message}`,
-      )
-      const subject = encodeURIComponent('Anfrage über Lichtraum Website')
-      window.location.href = `mailto:${brand.contactEmail}?subject=${subject}&body=${body}`
-      setStatus('success')
-      return
-    }
-
     setStatus('loading')
     setErrorMsg('')
 
     try {
-      const formData = new FormData()
-      formData.append('access_key', web3formsKey)
-      formData.append('subject', 'Neue Anfrage Lichtraum Website')
-      formData.append('from_name', 'Lichtraum Contact Form')
-      formData.append('name', form.name)
-      formData.append('email', form.email)
-      formData.append('phone', form.phone)
-      formData.append('shooting_type', form.shootingType)
-      formData.append('date', form.date)
-      formData.append('location', form.location)
-      formData.append('message', form.message)
-      formData.append('botcheck', form.botcheck)
-
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          shootingType: form.shootingType,
+          date: form.date,
+          location: form.location,
+          message: form.message,
+        }),
       })
 
       const json = await res.json()
@@ -110,7 +93,7 @@ export function ContactForm() {
         setStatus('success')
       } else {
         setStatus('error')
-        setErrorMsg(json.message || 'Etwas ist schiefgelaufen. Bitte versuch es erneut.')
+        setErrorMsg(json.error || 'Etwas ist schiefgelaufen. Bitte versuch es erneut.')
       }
     } catch (err) {
       setStatus('error')

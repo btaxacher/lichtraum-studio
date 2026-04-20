@@ -7,7 +7,7 @@ export const generateMetadata = () =>
     title: 'Datenschutzerklärung | Lichtraum Fotostudio',
     description: 'Datenschutzerklärung des Lichtraum Fotostudios gemäß DSGVO.',
     path: '/datenschutz',
-    noindex: true,
+    noindex: false,
   })
 
 export default function DatenschutzPage() {

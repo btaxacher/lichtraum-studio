@@ -3,8 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    // V3: Unsplash vollständig entfernt — alle Bilder lokal (/images/*).
-    // Build schlägt fehl wenn irgendwo noch eine Unsplash-URL referenziert wird → self-check.
     remotePatterns: [],
   },
   experimental: {

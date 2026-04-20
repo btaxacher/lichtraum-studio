@@ -39,12 +39,27 @@ function inferAreaServed(slug: string): string[] {
 }
 
 /**
- * Extracts starting price from content.pricing (lowest € value).
+ * Schema-Preise für Tier-1-Seiten.
+ * Override-Map statt inferiertem Minimum, damit die Schema-Preise
+ * den realistischen Startpreis der Hauptleistung zeigen.
  */
+const SCHEMA_PRICE: Record<string, string> = {
+  'hochzeitsfotograf-koeln': '1790',
+  'hochzeitsfotograf-euskirchen': '1790',
+  'bewerbungsfotos-koeln': '89',
+  'bewerbungsfotos-euskirchen': '89',
+  'fotograf-koeln': '149',
+  'fotoshooting-koeln': '149',
+  'schwangerschaftsfotos-koeln': '249',
+  'businessfotograf-koeln': '149',
+}
+
 function inferStartingPrice(slug: string): string | undefined {
+  if (SCHEMA_PRICE[slug]) return SCHEMA_PRICE[slug]
   const pricing = tier1Content[slug]?.pricing
   if (!pricing?.length) return undefined
   const prices = pricing
+    .filter((p) => !p.price.trimStart().startsWith('+'))
     .map((p) => p.price.match(/(\d[\d.]*)\s*€/))
     .filter((m): m is RegExpMatchArray => !!m)
     .map((m) => Number(m[1].replace(/\./g, '')))

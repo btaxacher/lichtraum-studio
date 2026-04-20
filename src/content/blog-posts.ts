@@ -248,8 +248,8 @@ export const blogPosts: BlogPost[] = [
     ],
     intro: [
       'Wir sind Lichtraum — Hochzeitsfotografen aus Euskirchen. In den letzten sechs Jahren haben wir in über 120 Locations im Rheinland und in NRW gearbeitet. Einige kennen wir inzwischen so gut, dass wir blind wissen, wo das Licht um 17 Uhr steht. Andere haben uns erst beim zweiten oder dritten Besuch überzeugt.',
-      'Diese 15 sind unsere persönlichen Favoriten: Hochzeitslocations, an denen wir am liebsten fotografieren — wegen des Lichts, der Stimmung und wegen dem, was sie mit Hochzeitspaaren machen. Die Liste ist geordnet nach Region, beginnend in der Eifel und unserem Heimatgebiet rund um Euskirchen, über Köln und das Bergische Land, bis nach Bonn und ins Siebengebirge.',
-      'Jede Location bekommt eine ehrliche Einschätzung: für welchen Hochzeitstyp, welche Kapazität, welches fotografische Highlight. Am Ende dieses Guides haben wir einen Auswahl-Leitfaden und die häufigsten Fragen zu Hochzeitslocations in NRW zusammengetragen.',
+      'Diese 15 sind unsere persönlichen Favoriten als Hochzeitslocation NRW: Orte, an denen wir am liebsten fotografieren — wegen des Lichts, der Stimmung und wegen dem, was sie mit Hochzeitspaaren machen. Die Liste ist geordnet nach Region, beginnend in der Eifel und unserem Heimatgebiet rund um Euskirchen, über Köln und das Bergische Land, bis nach Bonn und ins Siebengebirge.',
+      'Jede Hochzeitslocation NRW bekommt eine ehrliche Einschätzung: für welchen Hochzeitstyp, welche Kapazität, welches fotografische Highlight. Am Ende dieses Guides haben wir einen Auswahl-Leitfaden und die häufigsten Fragen zu Hochzeitslocations in NRW zusammengetragen.',
     ],
     sections: [
       {
@@ -358,7 +358,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        h2: 'Was wir euch bei der Location-Auswahl mitgeben',
+        h2: 'Hochzeitslocation NRW auswählen — was wir euch mitgeben',
         paragraphs: [
           'Licht zur Zeremonie-Zeit prüfen. Geht idealerweise an einem sonnigen Tag zur geplanten Uhrzeit an den Ort. Wenn ihr zur Zeremoniezeit nur in Schatten steht, braucht ihr eine Plan B (Location-Wechsel, andere Uhrzeit). Der Unterschied zwischen frontalem Abendlicht und komplettem Schatten ist fotografisch gewaltig.',
           'Plan B für Regen. Open-Air-Locations müssen einen wetterfesten Rückzugsraum haben. Klingt trivial, wird aber häufig vergessen. Wir haben schon Trauungen im improvisierten Partyzelt mit undichten Nähten begleitet — macht Spaß für die Reportage, aber ist keine gute Hochzeits-Erinnerung.',
@@ -390,7 +390,7 @@ export const blogPosts: BlogPost[] = [
         answer: 'Feuerwerk ist im Rheinland auf Privatgelände in der Regel erlaubt, wenn die Location zustimmt. Wunderkerzen sind fast überall möglich, außer in Innenräumen (Brandschutzvorschriften). Für spektakuläre Abend-Fotos sind Wunderkerzen-Momente draußen ein Klassiker — Sparkler-Exits lassen sich bei Burg Satzvey, Gut Frielinghausen und Gut Clarenhof großartig inszenieren.',
       },
     ],
-    closing: 'Die Location ist eine der wenigen Entscheidungen eurer Hochzeit, die nicht nur den Tag prägt, sondern die Fotos, die ihr ein Leben lang ansehen werdet. Wählt nach Stimmung, nicht nach Prestige — die Fotos zeigen nicht, wie teuer es war, sondern wie es sich angefühlt hat. Wenn ihr unsicher seid, welche zwei oder drei Locations zu eurer Vorstellung passen könnten, schreibt uns eure Eckdaten (Gästezahl, Jahreszeit, Stil). Wir geben euch eine ehrliche Einschätzung — auch dann, wenn wir nicht euer Fotograf werden.',
+    closing: 'Die richtige Hochzeitslocation NRW ist eine der wenigen Entscheidungen, die nicht nur den Tag prägt, sondern die Fotos, die ihr ein Leben lang ansehen werdet. Wählt nach Stimmung, nicht nach Prestige — die Fotos zeigen nicht, wie teuer es war, sondern wie es sich angefühlt hat. Wenn ihr unsicher seid, welche zwei oder drei Hochzeitslocations in NRW zu eurer Vorstellung passen könnten, schreibt uns eure Eckdaten (Gästezahl, Jahreszeit, Stil). Wir geben euch eine ehrliche Einschätzung �� auch dann, wenn wir nicht euer Fotograf werden.',
   },
 
   // ============================================================
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
     ],
     intro: [
       'Ein gutes Bewerbungsfoto hat wenig mit Schönheit zu tun und sehr viel mit Vorbereitung. Zwischen dem Durchschnittsfoto und dem überzeugenden Foto liegen oft zehn vermeidbare Details — von der richtigen Outfit-Wahl bis zum Hintergrund-Kontrast.',
-      'Diese Checkliste ist als Gedächtnisstütze gedacht für den Tag vor und den Tag des Termins. Sie führt euch durch Schlaf, Hautpflege, Kleidung (nach Branche getrennt), die richtigen Techniken vor der Kamera und die Retusche-Grenzen. Am Ende ist ein Bewerbungsfoto kein Glücksspiel mehr, sondern eine Checkliste.',
+      'Diese Checkliste ist als Gedächtnisstütze gedacht für den Tag vor und den Tag des Termins. Sie führt euch durch Schlaf, Hautpflege, das richtige Outfit Bewerbungsfoto (nach Branche getrennt), die richtigen Techniken vor der Kamera und die Retusche-Grenzen. Am Ende ist ein Bewerbungsfoto kein Glücksspiel mehr, sondern eine Checkliste.',
     ],
     sections: [
       {
@@ -443,9 +443,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        h2: 'Das richtige Outfit nach Branche',
+        h2: 'Outfit Bewerbungsfoto — das richtige nach Branche',
         paragraphs: [
-          'Die Frage „Was soll ich anziehen?" ist die häufigste, die wir im Studio hören — und die Antwort ist immer: das passt zur Zielposition. Ein Bewerbungsfoto ist ein Tür-Öffner, nicht ein Porträt. Die Frage ist nicht, was ihr gerne tragt, sondern was die Personalabteilung bei dieser Stelle sehen möchte.',
+          'Die Frage „Was soll ich anziehen?" ist die häufigste, die wir im Studio hören — und die Antwort beim Outfit Bewerbungsfoto ist immer: das passt zur Zielposition. Ein Bewerbungsfoto ist ein Tür-Öffner, nicht ein Porträt. Die Frage ist nicht, was ihr gerne tragt, sondern was die Personalabteilung bei dieser Stelle sehen möchte.',
           'Hier unsere Outfit-Matrix für die fünf häufigsten Branchen-Cluster. Pro Cluster ein Kern-Setting und Alternativen.',
         ],
       },
@@ -493,7 +493,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: 'Farben, die in Kamera funktionieren',
         paragraphs: [
-          'Die Kamera sieht Farben anders als das Auge. Was in der Umkleide „pastellig" wirkt, kann unter Studio-Licht plötzlich signalfarben sein. Und was warm wirkt, kann bei 5.600 Kelvin kalt-grau kippen.',
+          'Beim Outfit Bewerbungsfoto spielt die Farbwahl eine entscheidende Rolle, denn die Kamera sieht Farben anders als das Auge. Was in der Umkleide „pastellig" wirkt, kann unter Studio-Licht plötzlich signalfarben sein. Und was warm wirkt, kann bei 5.600 Kelvin kalt-grau kippen.',
           'Funktioniert fast immer: dunkelblau, anthrazit, petrol, warmes beige, warmes dunkelgrau, dunkelgrün, dunkelrot. Diese Farben schaffen Autorität und lassen das Gesicht im Fokus.',
           'Schwierig: reines Weiß (überstrahlt oft), reines Schwarz (saugt Details), Neonfarben, Glitzer, Muster unter 1 cm Größe (flackern durch den Moiré-Effekt).',
           'Persönlicher Hautton entscheidet mit. Helle Haut mit kühlem Unterton funktioniert gut mit blauen und grauen Tönen. Warme Haut (Beige-Unterton) kommt mit warmen Tönen (creme, beige, warmes olive) besser zur Geltung. Dunklere Hauttöne profitieren von Kontrast — hier dürfen auch gedeckte Farben kräftiger ausfallen.',
@@ -513,6 +513,15 @@ export const blogPosts: BlogPost[] = [
           'Haare sollten zwei bis fünf Tage alt sein. Frisch gewaschene Haare wirken flauschig-unstrukturiert; ungewaschen natürlich unpassend. Idealer Zustand: ein Tag nach der Wäsche, geringes Styling-Produkt, ruhige Frisur.',
           'Make-up: natürlich, nicht fehlend. Foundation bei Teint-Problemen, Rouge zart, Augen definiert aber nicht geschminkt. Lippenstift in der eigenen Lippen-Farbton-Familie — kein Rot auf Bewerbungsfotos, das wirkt schnell maskenhaft.',
           'Bart: getrimmt auf eine klare Länge. Entweder rasiert, oder drei bis fünf Tage Bart in gleichmäßiger Länge, oder voller Bart mit sauberer Kontur. Der „zweitägige Bart mit Kante" wirkt oft unordentlich.',
+          'Augenbrauen sind ein unterschätztes Detail. Beim Outfit Bewerbungsfoto denken die meisten an Hemd und Blazer — aber ungepflegte Augenbrauen fallen im Porträtlicht sofort auf. Ein kurzer Kontrollgriff mit Pinzette oder Trimmer am Vorabend genügt. Kein Threading oder Waxing am Tag des Shootings selbst, da Rötungen entstehen können.',
+        ],
+      },
+      {
+        h2: 'Die häufigsten Fehler beim Bewerbungsfoto',
+        paragraphs: [
+          'In über 500 Bewerbungsfotos, die wir im Studio fotografiert haben, sehen wir immer wieder dieselben Fehler. Der häufigste: zu viel Retusche. Ein Foto, das aussieht wie aus einem Magazin-Cover, wirkt bei der Personalabteilung nicht seriös, sondern unecht. Ziel ist ein natürliches, gut belichtetes Portrait — nicht digitale Schönheitschirurgie.',
+          'Fehler Nummer zwei: das falsche Alter des Fotos. Ein Bewerbungsfoto sollte nicht älter als zwei Jahre sein. Wer sich mit einem fünf Jahre alten Bild bewirbt, erzeugt im Vorstellungsgespräch eine kognitive Dissonanz — und die kostet Vertrauen, bevor das erste Wort gesprochen ist.',
+          'Dritter Klassiker: Selfie-Perspektive. Handyfotos vor Badezimmerspiegeln, vor weißen Wänden oder im Gegenlicht. Auch wenn die Smartphone-Kamera technisch gut genug wäre — die Perspektive, das Licht und der Hintergrund verraten sofort, dass hier kein Profi am Werk war. Investiert lieber 89 € in ein Studio-Shooting als 0 € in einen ersten Eindruck, der euch Interviews kostet.',
         ],
       },
       {

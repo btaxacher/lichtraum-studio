@@ -10,10 +10,12 @@ import { StudioLocation } from '@/components/sections/studio-location'
 import { FaqAccordion } from '@/components/sections/faq-accordion'
 import { NearbyCities } from '@/components/sections/nearby-cities'
 import { ContactForm } from '@/components/sections/contact-form'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Start', path: '/' }]} />
       <Hero />
       <IntroGreeting />
       <ServicesGrid />

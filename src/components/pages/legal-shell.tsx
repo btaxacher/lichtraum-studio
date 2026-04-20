@@ -47,20 +47,44 @@ export function LegalShell({ title, crumbName, crumbPath, lastUpdated, blocks }:
           </header>
 
           <div className="space-y-10">
-            {blocks.map((block, i) => (
-              <section key={i}>
-                {block.h2 ? (
-                  <h2 className="editorial-display text-fg text-xl md:text-2xl font-medium leading-[1.2] mb-4">
-                    {block.h2}
-                  </h2>
-                ) : null}
-                <div className="space-y-3 text-fg-muted text-base leading-[1.75]">
-                  {block.paragraphs.map((p, j) => (
-                    <p key={j}>{p}</p>
-                  ))}
-                </div>
-              </section>
-            ))}
+            {blocks.map((block, i) => {
+              const isAddressBlock = i === 0 && block.h2?.includes('§ 5')
+
+              if (isAddressBlock) {
+                return (
+                  <section key={i}>
+                    <details className="group">
+                      <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h2 className="editorial-display text-fg text-xl md:text-2xl font-medium leading-[1.2] mb-4 inline-flex items-center gap-2">
+                          {block.h2}
+                          <span className="text-fg-subtle text-sm transition-transform duration-300 group-open:rotate-90">▸</span>
+                        </h2>
+                      </summary>
+                      <div className="space-y-3 text-fg-muted text-base leading-[1.75] mt-2">
+                        {block.paragraphs.map((p, j) => (
+                          <p key={j}>{p}</p>
+                        ))}
+                      </div>
+                    </details>
+                  </section>
+                )
+              }
+
+              return (
+                <section key={i}>
+                  {block.h2 ? (
+                    <h2 className="editorial-display text-fg text-xl md:text-2xl font-medium leading-[1.2] mb-4">
+                      {block.h2}
+                    </h2>
+                  ) : null}
+                  <div className="space-y-3 text-fg-muted text-base leading-[1.75]">
+                    {block.paragraphs.map((p, j) => (
+                      <p key={j}>{p}</p>
+                    ))}
+                  </div>
+                </section>
+              )
+            })}
           </div>
         </div>
       </article>

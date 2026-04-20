@@ -25,13 +25,13 @@ export const tier1Content: Record<string, Tier1Content> = {
     eyebrow: 'Hochzeitsreportage · Köln & NRW',
     intro: [
       'Eine Hochzeit in Köln erzählt sich anders als anderswo. Der Dom als Schatten über dem Rheinufer, das Schiff, das langsam vorbeizieht, während zwei Menschen zum ersten Mal „Mann und Frau" hören — Köln gibt seiner Liebe Kulisse, aber keine Pose.',
-      'Als Hochzeitsfotograf für Köln und NRW begleiten wir Paare seit vielen Jahren durch ihren wichtigsten Tag. Ohne Regie, ohne inszenierte Posen, ohne vorgefertigte Shotlisten. Nur mit Auge, Geduld und der Bereitschaft, zehn Stunden lang fast unsichtbar zu sein — damit die Fotos echt bleiben.',
+      'Als Hochzeitsfotograf Köln begleiten wir Paare seit vielen Jahren durch ihren wichtigsten Tag. Ohne Regie, ohne inszenierte Posen, ohne vorgefertigte Shotlisten. Nur mit Auge, Geduld und der Bereitschaft, zehn Stunden lang fast unsichtbar zu sein — damit die Fotos echt bleiben.',
     ],
     sections: [
-      { h2: 'Unser Stil — Reportage trifft Editorial',
+      { h2: 'Hochzeitsfotograf Köln — Reportage trifft Editorial',
         body: [
           'Wir fotografieren Hochzeiten im Reportage-Stil: dokumentarisch, zurückhaltend, ohne Eingriff in den natürlichen Ablauf. Wir sagen Ihnen nicht, wie Sie zu stehen haben, wir sagen auch Ihren Gästen nicht, wo sie zu lachen haben. Stattdessen warten wir — bis der Moment von selbst entsteht.',
-          'Auf diese Weise entsteht ein zweiter Stil ganz nebenbei: das Editorial-Portrait. Wir nehmen uns 30 bis 60 Minuten zwischen Zeremonie und Feier, suchen ein ruhiges Licht, einen stillen Ort — und fotografieren Sie so, wie eine Zeitschrift ihre Cover fotografiert: großzügig, bewusst, mit Zeit.',
+          'Auf diese Weise entsteht ein zweiter Stil ganz nebenbei: das Editorial-Portrait. Als Hochzeitsfotograf Köln nehmen wir uns 30 bis 60 Minuten zwischen Zeremonie und Feier, suchen ein ruhiges Licht, einen stillen Ort — und fotografieren Sie so, wie eine Zeitschrift ihre Cover fotografiert: großzügig, bewusst, mit Zeit.',
           'Das Ergebnis: eine Bilderserie, die sowohl journalistisch als auch editorial funktioniert. Nichts wirkt gestellt, und trotzdem ist jedes Portrait ein kleines Kunstwerk.',
         ],
       },
@@ -42,9 +42,9 @@ export const tier1Content: Record<string, Tier1Content> = {
           'Zwischen den Programmpunkten fotografieren wir Gäste, Details, stille Zwischentöne. Nach der Hochzeit bekommen Sie binnen 72 Stunden eine kleine Vorschau-Serie. Die vollständige Galerie mit 500–800 bearbeiteten Fotos liefern wir nach vier bis sechs Wochen über ein privates Online-Portal.',
         ],
       },
-      { h2: 'Kulissen, die wir kennen',
+      { h2: 'Hochzeitsfotograf Köln — Kulissen, die wir kennen',
         body: [
-          'Köln hat mehr Hochzeitslocations als jede andere Stadt in NRW. Wir fotografieren regelmäßig am Kölner Dom, am Rheinauhafen, im Stadtgarten, vor der Hohenzollernbrücke — und immer wieder in Schloss Augustusburg in Brühl, eine der schönsten barocken Hochzeitskulissen Deutschlands.',
+          'Köln hat mehr Hochzeitslocations als jede andere Stadt in NRW. Als Hochzeitsfotograf Köln fotografieren wir regelmäßig am Kölner Dom, am Rheinauhafen, im Stadtgarten, vor der Hohenzollernbrücke — und immer wieder in Schloss Augustusburg in Brühl, eine der schönsten barocken Hochzeitskulissen Deutschlands.',
           'Für Paare, die außerhalb des Zentrums heiraten, kennen wir Schloss Bensberg in Bergisch Gladbach, das Michaelsberg-Kloster in Siegburg, das Herrenhaus Stammen in der Eifel und die Villa Flora in Köln-Lindenthal. Wir beraten Sie gerne, welche Location zu Ihrem Stil passt.',
         ],
       },
@@ -54,9 +54,9 @@ export const tier1Content: Record<string, Tier1Content> = {
           'Eine Online-Galerie mit Passwortschutz, die Sie mit Familie und Freunden teilen können — und über die Ihre Gäste Einzelbilder bestellen können, ohne dass Sie als Brautpaar zur Bestellzentrale werden.',
         ],
       },
-      { h2: 'Saison und Verfügbarkeit — warum Köln früh buchen will',
+      { h2: 'Hochzeitsfotograf Köln buchen — warum früh reservieren',
         body: [
-          'Köln ist im Rheinland das gefragteste Hochzeitsziel: Dom, Rheinpromenade, Schloss Augustusburg, die Kranhäuser als Editorial-Kulisse. Entsprechend früh sind gute Termine weg. Samstage zwischen Mai und September buchen Paare bei uns regelmäßig 12 bis 18 Monate im Voraus — besonders rund um den Kölner Hochzeits-Herbst (Ende August bis Mitte Oktober), wenn das Licht weich wird und die Rheinpromenade zur goldenen Stunde in Bronze taucht.',
+          'Wer einen Hochzeitsfotograf Köln sucht, merkt schnell: gute Termine sind rar. Dom, Rheinpromenade, Schloss Augustusburg, die Kranhäuser als Editorial-Kulisse — Köln ist im Rheinland das gefragteste Hochzeitsziel. Samstage zwischen Mai und September buchen Paare bei uns regelmäßig 12 bis 18 Monate im Voraus — besonders rund um den Kölner Hochzeits-Herbst (Ende August bis Mitte Oktober), wenn das Licht weich wird und die Rheinpromenade zur goldenen Stunde in Bronze taucht.',
           'Wochentage und die Nebensaison (November bis März) sind oft kurzfristig noch möglich — und bringen einen unterschätzten Vorteil mit: leere Hotspots. Ein Standesamt-Termin an einem Dienstag am Rhein hat keine Schaulustigen, die Dom-Plattform gehört dem Paar allein, das Belgische Viertel ist nicht voll. Wer sich ein intimeres Reportage-Gefühl wünscht, findet in der Kölner Nebensaison genau das.',
         ],
       },
@@ -86,7 +86,7 @@ export const tier1Content: Record<string, Tier1Content> = {
     ],
     faqs: [
       { q: 'Wie viel kostet ein Hochzeitsfotograf in Köln?',
-        a: 'Realistisch zwischen 1.500 € und 3.500 € für eine ganztägige Begleitung, je nach Stundenzahl, Zweitfotograf und Album. Wir liegen mit 1.890 € für einen 10-Stunden-Tag im oberen Mittelfeld — inklusive Retusche, Online-Galerie und Hochauflösungsdateien.' },
+        a: 'Ein guter Hochzeitsfotograf Köln kostet realistisch zwischen 1.500 € und 3.500 € für eine ganztägige Begleitung, je nach Stundenzahl, Zweitfotograf und Album. Wir liegen mit 1.890 € für einen 10-Stunden-Tag im oberen Mittelfeld — inklusive Retusche, Online-Galerie und Hochauflösungsdateien.' },
       { q: 'Wie früh sollte man buchen?',
         a: 'Für Hochzeiten zwischen Mai und September empfehlen wir 9–12 Monate Vorlauf, für Samstags-Hochzeiten in der Hochsaison gerne auch 18 Monate. Kurzfristige Termine in der Nebensaison (November–März) sind oft noch möglich.' },
       { q: 'Fotografieren Sie auch außerhalb von Köln?',
@@ -106,7 +106,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       { q: 'Gibt es eine Anzahlung?',
         a: 'Ja, 30 % bei Buchung als Reservierungs-Anzahlung. Der Restbetrag wird eine Woche vor der Hochzeit fällig.' },
     ],
-    closing: 'Wir reservieren pro Monat maximal drei Hochzeiten — damit jedes Paar die Aufmerksamkeit bekommt, die es verdient. Schreiben Sie uns, und wir prüfen umgehend, ob Ihr Wunschdatum noch frei ist.',
+    closing: 'Hochzeitsfotograf Köln anfragen: Wir reservieren pro Monat maximal drei Hochzeiten — damit jedes Paar die Aufmerksamkeit bekommt, die es verdient. Schreiben Sie uns, und wir prüfen umgehend, ob Ihr Wunschdatum noch frei ist.',
   },
 
   'bewerbungsfotos-koeln': {
@@ -114,10 +114,10 @@ export const tier1Content: Record<string, Tier1Content> = {
     eyebrow: 'Bewerbungsfotos · Köln',
     intro: [
       'Ein gutes Bewerbungsfoto entscheidet in Sekunden. Recruiter scrollen am ersten Tag durch dreißig Lebensläufe — und bleiben bei dem hängen, bei dem das Gesicht sie ansieht wie jemand, mit dem man einen Kaffee trinken möchte.',
-      'Bei Lichtraum in Köln fotografieren wir Bewerbungsbilder ab 89 € — professionell ausgeleuchtet, retuschiert im Preis enthalten, Express-Termine innerhalb einer Woche möglich. Wir beraten Sie zu Outfit und Ausdruck passend zu Ihrer Branche.',
+      'Bewerbungsfotos Köln bei Lichtraum: ab 89 € — professionell ausgeleuchtet, retuschiert im Preis enthalten, Express-Termine innerhalb einer Woche möglich. Wir beraten Sie zu Outfit und Ausdruck passend zu Ihrer Branche.',
     ],
     sections: [
-      { h2: 'Was ein gutes Bewerbungsfoto ausmacht',
+      { h2: 'Bewerbungsfotos Köln — was ein gutes Bild ausmacht',
         body: [
           'Licht. Ausdruck. Schnitt. In dieser Reihenfolge. Alles andere — Hintergrund, Pose, Outfit — ordnet sich dem unter. Ein technisch perfektes Foto mit leerem Blick verliert gegen ein einfaches Foto, bei dem jemand präsent ist.',
           'Deshalb arbeiten wir nicht mit Fotoautomaten-Ästhetik. Kein grauer Hintergrund, kein starres „Kopf hoch, nicht lachen". Stattdessen ein zehnminütiges Gespräch, bevor die Kamera überhaupt ausgepackt wird — damit Sie nicht posieren, sondern sich zeigen.',
@@ -143,7 +143,7 @@ export const tier1Content: Record<string, Tier1Content> = {
           'Wir retuschieren ausdrücklich nicht über das Notwendige hinaus. Kein Bildbearbeitungs-Glanz, keine Hautglättung, die im Videocall dann nicht hält. Ihr Foto soll in fünf Jahren noch wie Sie aussehen.',
         ],
       },
-      { h2: 'Was Recruiter in Köln wirklich sehen',
+      { h2: 'Bewerbungsfotos Köln — was Recruiter wirklich sehen',
         body: [
           'Köln ist ein Arbeitgebermarkt mit starken Branchen: Consulting (Deloitte, PwC, BCG), Versicherung (DEVK, AXA), Medien (RTL, WDR), Handel (REWE, dm), Tech (Trivago-Nachläufer, OBI Digital) und ein stetig wachsender Kanzlei- und Steuerberatungs-Sektor. Jede dieser Branchen hat unausgesprochene Codes, wie ein Bewerbungsfoto auszusehen hat — und wer diese Codes nicht kennt, verliert in Sekunden. Wir kennen sie, weil wir sie jede Woche fotografieren.',
           'Konkret: Ein HR-Screening bei einem Beratungshaus braucht einen neutral-dunklen Hintergrund, klassische Drei-Punkt-Beleuchtung und einen Ausdruck, der Kompetenz ohne Arroganz kommuniziert. Eine Design-Agentur im Belgischen Viertel erwartet das Gegenteil: wärmeres Licht, ein entspanntes Lächeln, gerne mit etwas Unschärfe in der Umgebung. Wer für beide Stellen dasselbe Foto nutzt, verliert die Hälfte der Chancen.',
@@ -166,7 +166,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       { name: 'Foto-Shooting vor Ort in Ihrem Büro (Köln)', price: '+ 150 €' },
     ],
     faqs: [
-      { q: 'Wie lange dauert ein Bewerbungsfoto-Termin?',
+      { q: 'Wie lange dauert ein Bewerbungsfotos Köln Termin?',
         a: 'Standard 30–45 Minuten, Premium 60 Minuten. Wir planen absichtlich genug Puffer ein, damit Sie nicht gehetzt sind.' },
       { q: 'Wann bekomme ich meine Fotos?',
         a: 'Innerhalb von 48 Stunden bei Standard-Terminen. Mit Express-Aufschlag innerhalb von 24 Stunden — geeignet für Last-Minute-Bewerbungen.' },
@@ -183,11 +183,11 @@ export const tier1Content: Record<string, Tier1Content> = {
       { q: 'Wie kommt man zum Studio?',
         a: 'Unser Studio liegt in Euskirchen, 30 Minuten von Köln. Wenn Sie nicht anreisen möchten, buchen Sie bitte das Vor-Ort-Paket (+ 150 €) und wir kommen in Ihr Büro.' },
       { q: 'Welche Formate bekomme ich geliefert?',
-        a: 'Jedes Bewerbungsfoto erhalten Sie in drei Formaten: hochaufgelöstes JPG (für Ausdruck und Bewerbungsmappen), web-optimiertes JPG (1500 px lange Kante, für Online-Portale wie XING, LinkedIn, StepStone) und auf Wunsch zusätzlich im 4:5-Portrait-Zuschnitt für Instagram. Alle Dateien unwasserzeichnet, mit uneingeschränkten Nutzungsrechten für Bewerbungen.' },
+        a: 'Bewerbungsfotos Köln erhalten Sie in drei Formaten: hochaufgelöstes JPG (für Ausdruck und Bewerbungsmappen), web-optimiertes JPG (1500 px lange Kante, für Online-Portale wie XING, LinkedIn, StepStone) und auf Wunsch zusätzlich im 4:5-Portrait-Zuschnitt für Instagram. Alle Dateien unwasserzeichnet, mit uneingeschränkten Nutzungsrechten für Bewerbungen.' },
       { q: 'Funktioniert das Foto auch für internationale Bewerbungen?',
         a: 'Ja, wir produzieren standardmäßig ein deutsches Bewerbungsfoto-Format (Hochformat, Kopf und Oberkörper). Für US-amerikanische und britische Märkte, wo traditionell kein Foto verwendet wird, liefern wir auf Wunsch ein separates LinkedIn-Porträt im quadratischen Format und passen den Ausschnitt leicht an. Für französische Bewerbungen, die oft Foto verlangen, nutzen wir die deutsche Standardvariante — sie wird dort gleich akzeptiert.' },
     ],
-    closing: 'Buchen Sie einen Termin — wir melden uns binnen 24 Stunden mit zwei oder drei Zeitvorschlägen. Bei Express-Bedarf rufen Sie uns gerne direkt an. Für Gruppen ab drei Personen erstellen wir auf Wunsch ein individuelles Angebot mit Team-Rabatt und einer vorgelagerten Outfit-Abstimmung per Video, damit alle Bilder später auf Website oder Kanzlei-Seite konsistent wirken. Einladungscodes für Firmen-Kooperationen senden wir gerne nach kurzer Rückfrage.',
+    closing: 'Bewerbungsfotos Köln buchen: Wir melden uns binnen 24 Stunden mit zwei oder drei Zeitvorschlägen. Bei Express-Bedarf rufen Sie uns gerne direkt an. Für Gruppen ab drei Personen erstellen wir auf Wunsch ein individuelles Angebot mit Team-Rabatt und einer vorgelagerten Outfit-Abstimmung per Video, damit alle Bilder später auf Website oder Kanzlei-Seite konsistent wirken. Einladungscodes für Firmen-Kooperationen senden wir gerne nach kurzer Rückfrage.',
   },
 
   'fotograf-koeln': {
@@ -198,7 +198,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       'Lichtraum Fotostudio bedient den gesamten Kölner Markt: Hochzeiten, Portraits, Business, Events, Familie. Was uns verbindet, ist kein Genre, sondern ein Stil — ruhig, editorial, ohne Inszenierung.',
     ],
     sections: [
-      { h2: 'Was wir fotografieren',
+      { h2: 'Was wir als Fotograf in Köln anbieten',
         body: [
           'Hochzeiten in Köln, Bonn und der weiteren Region — als ganztägige Reportage oder in kompakten Standesamt-Formaten. Siehe dazu unsere spezialisierte Seite zum Hochzeitsfotograf Köln.',
           'Portraits: editorial, business, privat. Vom LinkedIn-Bild bis zum Corporate-Portrait-Set für die Website einer Kanzlei oder eines Mittelstandsunternehmens.',
@@ -206,20 +206,20 @@ export const tier1Content: Record<string, Tier1Content> = {
           'Events, Produkte und Marken — auf Anfrage, mit Tagessatz.',
         ],
       },
-      { h2: 'Warum Köln von außerhalb besser fotografiert wird',
+      { h2: 'Fotograf Köln — warum der Blick von außen zählt',
         body: [
           'Die meisten Kölner Fotografen sind Kölner. Das ist offensichtlich, aber weniger banal, als es klingt. Wer in einer Stadt aufgewachsen ist, fotografiert sie automatisch aus der Perspektive dessen, der nicht mehr staunt.',
           'Wir kommen aus 30 km Entfernung — Euskirchen, zwischen Eifel und Rheinland. Diese Distanz erlaubt uns, Köln immer wieder wie zum ersten Mal zu sehen. Der Dom, der Rheinauhafen, die Kranhäuser, das Belgische Viertel — für uns sind sie keine Kulisse, sondern Orte.',
-          'Das zweite Argument ist praktisch: wir sind mobil. Wir arbeiten in Köln genauso wie in Bonn, Düsseldorf, Aachen oder der Eifel — und das ohne die typischen Kölner Studio-Preise, die auf urbanem Gewerbe-Mietniveau basieren.',
+          'Das zweite Argument ist praktisch: Als Fotograf für Köln sind wir mobil. Wir arbeiten in Köln genauso wie in Bonn, Düsseldorf, Aachen oder der Eifel — und das ohne die typischen Kölner Studio-Preise, die auf urbanem Gewerbe-Mietniveau basieren.',
         ],
       },
-      { h2: 'Unser Stil — in einem Satz',
+      { h2: 'Unser Stil als Fotograf in Köln',
         body: [
           'Editorial, zurückhaltend, auf Menschen fokussiert. Wir fotografieren kein „gestelltes Schöntun", sondern versuchen, den Moment so zu halten, wie er ist — und ihn nur mit Licht und Kamerawahl etwas zu verdichten.',
           'Konkret heißt das: weiche, natürliche Beleuchtung wo möglich, großzügige Bildausschnitte, wenig Farbe in der Nachbearbeitung, viel Atem in den Bildern. Wer grelle Sättigung und „Insta-Look" sucht, sollte einen anderen Fotografen buchen.',
         ],
       },
-      { h2: 'Preise und Pakete im Überblick',
+      { h2: 'Fotograf Köln — Preise und Pakete',
         body: [
           'Hochzeitsfotografie: ab 890 € (Standesamt) bis 2.790 € (Premium-Ganztag). Siehe ausführliche Preistabelle auf der Hochzeits-Seite.',
           'Bewerbungsfotos: ab 89 €. Siehe Bewerbungsfotos-Seite.',
@@ -270,7 +270,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       { q: 'Kann ich zwei Shooting-Arten in einem Termin kombinieren?',
         a: 'Ja, häufig verbinden Kunden Portrait und Business-Headshot oder Paar-Shooting und Familien-Bilder. Wir kalkulieren dann ein Kombi-Paket. Wichtig ist, dass die Licht-Setups kompatibel sind — im Zweifel klären wir das im Vorgespräch und schlagen Alternativen vor, falls eine Kombi zu Qualitätsverlust führen würde.' },
     ],
-    closing: 'Wenn Sie einen Fotografen für Köln suchen, der nicht nach „Köln" aussieht — schreiben Sie uns. Wir besprechen Ihr Projekt, schicken eine Ideenskizze und einen Kostenvoranschlag zurück. Auf Wunsch vereinbaren wir zunächst ein unverbindliches 20-Minuten-Video-Kennenlernen, damit Sie sehen, mit wem Sie es später am Shooting-Tag zu tun haben werden.',
+    closing: 'Wenn Sie einen Fotograf in Köln suchen, der nicht nach „Köln" aussieht — schreiben Sie uns. Wir besprechen Ihr Projekt, schicken eine Ideenskizze und einen Kostenvoranschlag zurück. Auf Wunsch vereinbaren wir zunächst ein unverbindliches 20-Minuten-Video-Kennenlernen, damit Sie sehen, mit wem Sie es später am Shooting-Tag zu tun haben werden.',
   },
 
   'fotoshooting-koeln': {
@@ -445,14 +445,14 @@ export const tier1Content: Record<string, Tier1Content> = {
           'Die Eifel selbst — Wald, Heide, Seen — eignet sich für kleinere Hochzeiten mit Outdoor-Zeremonie, zum Beispiel an der Steinbachtalsperre oder im Nationalpark Eifel.',
         ],
       },
-      { h2: 'Unser Vorteil als lokaler Hochzeitsfotograf',
+      { h2: 'Hochzeitsfotograf Euskirchen — unser lokaler Vorteil',
         body: [
-          'Wir sind in zehn Minuten bei Ihnen, wenn Sie aus Euskirchen, Weilerswist, Zülpich oder Mechernich heiraten. Das heißt: Vorbesprechungen sind unkompliziert, Location-Scoutings vor der Hochzeit können wir ohne Zusatzkosten machen.',
+          'Als Hochzeitsfotograf Euskirchen sind wir in zehn Minuten bei Ihnen, wenn Sie aus Euskirchen, Weilerswist, Zülpich oder Mechernich heiraten. Das heißt: Vorbesprechungen sind unkompliziert, Location-Scoutings vor der Hochzeit können wir ohne Zusatzkosten machen.',
           'Wir kennen die Standesämter der Region und wissen, wie lang eine Trauung dort üblicherweise dauert, wo der Fotograf stehen darf und welche Lichtbedingungen herrschen.',
           'Für Paare, die zusätzlich in Köln heiraten oder ihre Hochzeit als Reportage bis in die Innenstadt führen möchten, bieten wir nahtlose Begleitung vom Eifel-Schloss bis zum Kölner Restaurant.',
         ],
       },
-      { h2: 'Stil — dasselbe wie in Köln, nur näher',
+      { h2: 'Hochzeitsfotograf Euskirchen — Stil wie in Köln, nur näher',
         body: [
           'Unser Hochzeits-Reportage-Stil ist derselbe, den Sie auf unserer Köln-Seite finden: dokumentarisch, zurückhaltend, mit Editorial-Portraits zwischen Zeremonie und Feier.',
           'Der einzige Unterschied: in der Eifel ist das Licht meist anders. Weicher, grüner, langsamer. Wir passen Bildbearbeitung und Farbwahl dezent an — nichts Dramatisches, nur eine etwas andere Tonalität.',
@@ -484,7 +484,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       { q: 'Fotografieren Sie auf Burg Satzvey?',
         a: 'Ja, regelmäßig. Wir kennen die Räumlichkeiten, die besten Spots für Portraits und haben auch bei Regen Backup-Pläne.' },
       { q: 'Wie viel kostet ein Hochzeitsfotograf in Euskirchen?',
-        a: 'Zwischen 890 € (Standesamt, 3 h) und 2.790 € (Premium, 12 h mit Zweitfotograf). Damit liegen wir preislich wie in Köln — aber mit kürzeren Wegen und besserer Ortskenntnis für die Eifel-Region.' },
+        a: 'Ein Hochzeitsfotograf Euskirchen kostet zwischen 890 € (Standesamt, 3 h) und 2.790 € (Premium, 12 h mit Zweitfotograf). Damit liegen wir preislich wie in Köln — aber mit kürzeren Wegen und besserer Ortskenntnis für die Eifel-Region.' },
       { q: 'Bieten Sie auch After-Wedding-Shoots in der Eifel?',
         a: 'Sehr gerne. Die Eifel bietet mit Nationalpark, Seen und Burgen ideale Kulissen für After-Wedding-Bilder — oft intimer und ruhiger als am Hochzeitstag selbst.' },
       { q: 'Wie weit im Voraus muss ich buchen?',
@@ -498,7 +498,7 @@ export const tier1Content: Record<string, Tier1Content> = {
       { q: 'Was ist bei Eifel-Locations besonders zu beachten?',
         a: 'Licht- und Wetterbedingungen wechseln in der Eifel schneller als im Rheinland. Ein Shooting, das um 14 Uhr in klarem Sonnenschein beginnt, kann um 15:30 Uhr in Nieselregen enden. Wir planen deshalb grundsätzlich mit einem Backup-Innenraum und nehmen wetterfeste Technik mit. Für Burg-Hochzeiten (Satzvey, Zievel) gibt es oft Auflagen zur Fotografie in bestimmten Bereichen — wir klären das vorab direkt mit der Burgverwaltung, damit Sie sich darum nicht kümmern müssen.' },
     ],
-    closing: 'Wenn Sie in Euskirchen oder der Eifel heiraten und einen Fotografen suchen, der die Region kennt — schreiben Sie uns. Wir prüfen die Verfügbarkeit Ihres Datums und schicken umgehend einen Vorschlag mit Paketempfehlung, Zeitplanskizze und auf Wunsch einer kleinen Referenz-Galerie aus einer vergleichbaren Eifel-Hochzeit der letzten Saison.',
+    closing: 'Hochzeitsfotograf Euskirchen anfragen: Wenn Sie in Euskirchen oder der Eifel heiraten und einen Fotografen suchen, der die Region kennt — schreiben Sie uns. Wir prüfen die Verfügbarkeit Ihres Datums und schicken umgehend einen Vorschlag mit Paketempfehlung, Zeitplanskizze und auf Wunsch einer kleinen Referenz-Galerie aus einer vergleichbaren Eifel-Hochzeit der letzten Saison.',
   },
 
   'schwangerschaftsfotos-koeln': {

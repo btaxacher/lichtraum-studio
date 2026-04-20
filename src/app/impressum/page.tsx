@@ -7,7 +7,7 @@ export const generateMetadata = () =>
     title: 'Impressum | Lichtraum Fotostudio',
     description: 'Impressum des Lichtraum Fotostudios gemäß § 5 TMG.',
     path: '/impressum',
-    noindex: true,
+    noindex: false,
   })
 
 export default function ImpressumPage() {

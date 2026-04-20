@@ -15,9 +15,10 @@ export const impressumContent = {
       h2: 'Angaben gemäß § 5 TMG',
       paragraphs: [
         'Lichtraum Fotostudio',
-        'Inhaber/in: [INHABER-NAME]',
-        '[STRASSE + HAUSNUMMER]',
-        '53919 Weilerswist',
+        'Bastian Taxacher',
+        'c/o Impressumservice Dein-Impressum',
+        'Stettiner Straße 41',
+        '35410 Hungen',
         'Deutschland',
       ],
     },
@@ -25,13 +26,13 @@ export const impressumContent = {
       h2: 'Kontakt',
       paragraphs: [
         'E-Mail: kontakt@lichtraum-euskirchen.de',
-        'Web: lichtraum-studio.vercel.app',
+        'Web: lichtraum-euskirchen.de',
       ],
     },
     {
       h2: 'Umsatzsteuer',
       paragraphs: [
-        '[USt-ID oder Hinweis: „Kleinunternehmer gemäß § 19 UStG — daher keine Umsatzsteuer auf Rechnungen."]',
+        'Kleinunternehmer gemäß § 19 UStG — daher keine Umsatzsteuer auf Rechnungen.',
       ],
     },
     {
@@ -45,9 +46,10 @@ export const impressumContent = {
     {
       h2: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
       paragraphs: [
-        '[INHABER-NAME]',
-        '[STRASSE + HAUSNUMMER]',
-        '53919 Weilerswist',
+        'Bastian Taxacher',
+        'c/o Impressumservice Dein-Impressum',
+        'Stettiner Straße 41',
+        '35410 Hungen',
       ],
     },
     {
@@ -97,9 +99,10 @@ export const datenschutzContent = {
       paragraphs: [
         'Verantwortlich für die Datenverarbeitung auf dieser Website ist:',
         'Lichtraum Fotostudio',
-        '[INHABER-NAME]',
-        '[STRASSE + HAUSNUMMER]',
-        '53919 Weilerswist',
+        'Bastian Taxacher',
+        'c/o Impressumservice Dein-Impressum',
+        'Stettiner Straße 41',
+        '35410 Hungen',
         'E-Mail: kontakt@lichtraum-euskirchen.de',
         'Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, Kontaktdaten o. Ä.).',
       ],

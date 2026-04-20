@@ -129,6 +129,24 @@ export function Footer() {
             })}
           </div>
         </div>
+
+        {/* Rechtliches — versteckter Zugang zu Impressum & Datenschutz */}
+        <div className="mt-4 flex justify-center">
+          <details className="group">
+            <summary className="text-xs text-fg-subtle/50 cursor-pointer hover:text-fg-subtle transition-colors duration-300 list-none [&::-webkit-details-marker]:hidden">
+              Rechtliches
+            </summary>
+            <div className="mt-2 flex items-center justify-center gap-2 text-xs text-fg-subtle/50">
+              <Link href="/impressum" className="hover:text-accent-terra transition-colors duration-300">
+                Impressum
+              </Link>
+              <span aria-hidden>|</span>
+              <Link href="/datenschutz" className="hover:text-accent-terra transition-colors duration-300">
+                Datenschutz
+              </Link>
+            </div>
+          </details>
+        </div>
       </div>
     </footer>
   )

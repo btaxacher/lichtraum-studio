@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     description: seo.description,
     images: ['/og.jpg'],
   },
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
   robots: { index: true, follow: true },
   authors: [{ name: brand.studio }],
   creator: brand.studio,
@@ -84,10 +87,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               priceRange: '€€',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Ladungsfähige Adresse vor Go-Live ergänzen',
+                streetAddress: 'Zülpicher Straße 90',
                 addressLocality: 'Weilerswist',
                 postalCode: '53919',
-                addressRegion: 'NRW',
+                addressRegion: 'Nordrhein-Westfalen',
                 addressCountry: 'DE',
               },
               areaServed: [
@@ -113,7 +116,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ...(brand.phone ? { telephone: brand.phone } : {}),
               email: brand.email,
               url: SITE_URL,
-              sameAs: [] as string[],
+              sameAs: [
+                'https://www.instagram.com/lichtraum.studio',
+                'https://www.pinterest.de/lichtraum.studio',
+              ],
             }),
           }}
         />
